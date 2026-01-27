@@ -15,7 +15,7 @@
 }
 
 .texto-3 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #76b91c !important;
     line-height: 1 !important;
     text-align: center;
@@ -25,11 +25,10 @@
 
 .texto-fundo {
     display: inline-block;
-    background-color: #76b91c;
-    color: #000 !important;
+    color: #76b91c;
     padding: 12px;
     text-align: center !important;
-    font-weight: 600;
+    font-weight: 200;
 }
 
 .texto-4 {
@@ -78,16 +77,64 @@
     color: #5f9912 !important;
 }
 
-
-.bg-gradient-dark {
+/* .bg-gradient-dark {
     background: linear-gradient(-190deg, #000, #222) !important;
-}
-
-
+} */
 
 h1{
     font-family: inherit;
 }
+
+ul li{
+    list-style: none;
+    color: white;
+    font-size: 18px;
+}
+
+.securite{
+    background-image: url('/img/security.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    border-radius: 20px;
+}
+.employer{
+    background-image: url('/img/atomatic.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    border-radius: 20px;
+}
+.video{
+    background-image: url('/img/edge-cloud-spaceall.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    border-radius: 20px;
+}
+ .securite ul,.employer ul,.video ul{
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.058));
+    backdrop-filter: blur(10px);
+    width: 95%;
+    border-radius: 16px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 12px;
+    padding: 0px;
+}
+
+ .securite li, .employer li, .video li{
+    margin: 20px;
+}
+
+.videoMult{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
 /* ===== BREAKPOINTS ===== */
 
 /* Telas grandes (desktops acima de 1200px) */
