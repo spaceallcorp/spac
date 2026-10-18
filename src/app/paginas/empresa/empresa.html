@@ -1,1 +1,232 @@
-<p>empresa works!</p>
+<app-menu></app-menu>
+
+<main class="solution-page empresa-page">
+    <!-- 1. Hero Section (Cabeçalho Institucional) -->
+    <header class="page-banner uk-text-left">
+        <div class="uk-padding-large uk-container">
+            <p class="texto-fundo">ENGENHARIA DE REDES E INFRAESTRUTURA DIGITAL</p>
+            <h1 class="hero-title uk-margin-small-top uk-margin-small-bottom">
+                Arquitetamos a infraestrutura que impulsiona o ecossistema digital de Angola.
+            </h1>
+            <p class="uk-text-lead hero-subtitle">
+                Nascidos da convicção de que a tecnologia de ponta deve servir a realidade local, unimos engenharia de
+                redes avançada, soberania de dados e uma visão implacável de autonomia para transformar a forma como as
+                organizações operam e escalam.
+            </p>
+            <div class="hero-actions uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde"
+                    href="#nossa-essencia"
+                    (click)="scrollToSection('nossa-essencia', $event)">
+                    Conheça a nossa visão
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/contacto">
+                    Fale com a nossa equipa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. A Nossa Essência: O Encontro Entre a Técnica e o Propósito Humano -->
+    <section id="nossa-essencia" class="uk-container uk-section">
+        <div class="context-panel uk-padding-large">
+            <div class="uk-grid-large uk-flex-middle" uk-grid>
+                <div class="uk-width-2-5@m">
+                    <span class="section-kicker">A NOSSA ESSÊNCIA</span>
+                    <h2 class="section-title uk-margin-small-top">
+                        O Encontro Entre a Técnica e o Propósito Humano
+                    </h2>
+                    <p class="essence-lead uk-margin-small-top">
+                        Construir o futuro digital exige mais do que cabos e servidores; exige inteligência contextual.
+                    </p>
+                </div>
+                <div class="uk-width-3-5@m">
+                    <p class="context-text">
+                        A <strong>SPACEALL Technologies</strong> nasceu com uma missão clara: libertar as empresas
+                        angolanas das amarras e da rigidez das infraestruturas de telecomunicações tradicionais.
+                        Acreditamos que o talento e a ambição dos nossos profissionais e empreendedores não devem ser
+                        limitados por barreiras geográficas, custos proibitivos em divisas ou instabilidade de rede.
+                    </p>
+                    <p class="context-text context-highlight uk-margin-remove-bottom">
+                        O nosso trabalho diário une o rigor matemático da engenharia de sistemas à empatia por quem gere
+                        operações críticas em ambientes desafiantes. Sabemos que por trás de cada endereço IP, de cada
+                        filial interligada e de cada byte de dados guardado, existem famílias, empregos e o crescimento
+                        de uma nação que recusa parar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual 1: Skyline de Luanda com fluxo de dados -->
+            <figure class="skyline-showcase uk-margin-large-top uk-margin-remove-bottom">
+                <div class="skyline-media">
+                    <img src="img/connectivity-spaceall.jpg"
+                        alt="Fotografia panorâmica com tratamento cinematográfico escuro do skyline de Luanda cruzada por linhas de dados em verde esmeralda, simbolizando o fluxo contínuo da rede SPACEALL"
+                        loading="lazy">
+                    <div class="skyline-overlay"></div>
+                    <div class="skyline-badges">
+                        <span class="skyline-badge">
+                            <span class="pulse-dot" aria-hidden="true"></span>
+                            Baixa de Luanda &amp; Talatona
+                        </span>
+                        <span class="skyline-badge">
+                            Malha Overlay L3 Contínua
+                        </span>
+                    </div>
+                </div>
+                <figcaption class="skyline-caption">
+                    <span>Fluxo contínuo de dados sobre o ecossistema financeiro e empresarial de Luanda — Talatona e Baixa interligadas com resiliência e soberania local.</span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- 3. O Ecossistema e a Escala: De Luanda para o Horizonte Global -->
+    <section class="ecosystem-strip uk-section">
+        <div class="uk-container">
+            <div class="uk-text-center uk-margin-large-bottom">
+                <span class="section-kicker">O ECOSSISTEMA E A ESCALA</span>
+                <h2 class="section-title uk-margin-small-top">De Luanda para o Horizonte Global</h2>
+                <p class="section-intro">
+                    A nossa arquitetura foi desenhada a pensar no posicionamento estratégico de Angola no continente
+                    africano e no mundo:
+                </p>
+            </div>
+
+            <div class="uk-grid-large uk-flex-middle" uk-grid>
+                <!-- Coluna de Pilares de Escala -->
+                <div class="uk-width-1-2@m">
+                    <div class="uk-grid-medium uk-child-width-1-1" uk-grid>
+                        @for (pilar of pilaresEcossistema; track pilar.titulo) {
+                            <div>
+                                <article class="uk-card uk-card-default uk-card-body scale-card">
+                                    <div class="pillar-header">
+                                        <span class="pillar-icon" [attr.uk-icon]="'icon: ' + pilar.icone + '; ratio: 1.25'" aria-hidden="true"></span>
+                                        <span class="pillar-badge">{{ pilar.etiqueta }}</span>
+                                    </div>
+                                    <h3 class="uk-card-title">{{ pilar.titulo }}</h3>
+                                    <p class="pillar-description uk-margin-remove-bottom">{{ pilar.descricao }}</p>
+                                    @if (pilar.destaque) {
+                                        <div class="scale-metric">
+                                            <span uk-icon="icon: bolt; ratio: 0.9" aria-hidden="true"></span>
+                                            <span>{{ pilar.destaque }}</span>
+                                        </div>
+                                    }
+                                </article>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Visual 2: O Mapa de Angola Conectado -->
+                <div class="uk-width-1-2@m">
+                    <div class="angola-map-card uk-padding">
+                        <div class="map-card-header">
+                            <div>
+                                <span class="pillar-badge">MALHA NACIONAL</span>
+                                <h3 class="map-card-title uk-margin-small-top uk-margin-remove-bottom">
+                                    O Mapa de Angola Conectado
+                                </h3>
+                            </div>
+                            <span class="map-status-pill">
+                                <span class="pulse-dot" aria-hidden="true"></span>
+                                Backbone Ativo
+                            </span>
+                        </div>
+
+                        <figure class="angola-map-frame uk-margin-medium-top uk-margin-medium-bottom">
+                            <img src="img/mapa_spaceall_website.png"
+                                alt="Mapa estilizado de Angola em tons monocromáticos de alta tecnologia, destacando pulsos de conectividade que irradiam de Luanda para Huambo, Benguela e Lubango"
+                                loading="lazy">
+                        </figure>
+
+                        <p class="map-card-description">
+                            Pulsos de conectividade que irradiam de Luanda para as províncias, unindo centros urbanos,
+                            polos industriais e zonas remotas numa única arquitetura soberana.
+                        </p>
+
+                        <div class="province-grid uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s" uk-grid>
+                            @for (ponto of pontosMapa; track ponto.provincia) {
+                                <div>
+                                    <div class="province-node">
+                                        <span class="province-name">
+                                            <span class="pulse-dot" aria-hidden="true"></span>
+                                            {{ ponto.provincia }}
+                                        </span>
+                                        <span class="province-role">{{ ponto.papel }}</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. O Nosso Diferencial no Mercado Angolano -->
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-large-bottom">
+            <span class="section-kicker">PORQUÊ A SPACEALL</span>
+            <h2 class="section-title uk-margin-small-top">O Nosso Diferencial no Mercado Angolano</h2>
+            <p class="section-intro">
+                O que nos distingue não é apenas o que fazemos, mas a forma radicalmente transparente e focada no
+                cliente como o fazemos:
+            </p>
+        </div>
+
+        <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+            @for (item of diferenciais; track item.titulo) {
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body differential-card">
+                        <div class="pillar-header">
+                            <span class="differential-emoji" aria-hidden="true">{{ item.emoji }}</span>
+                            <span class="pillar-icon" [attr.uk-icon]="'icon: ' + item.icone + '; ratio: 1.15'" aria-hidden="true"></span>
+                        </div>
+                        <h3 class="uk-card-title pillar-title">{{ item.titulo }}</h3>
+                        <p class="pillar-description uk-margin-remove-bottom">{{ item.descricao }}</p>
+                    </article>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- 5. O Manifesto SPACEALL -->
+    <section class="uk-container uk-section">
+        <div class="manifesto-panel uk-padding-large uk-text-center">
+            <span class="section-kicker">O MANIFESTO SPACEALL</span>
+            <blockquote class="manifesto-quote uk-margin-medium-top uk-margin-medium-bottom">
+                “Não criamos apenas redes de computadores; construímos a infraestrutura de confiança sobre a qual o
+                futuro económico e tecnológico de Angola será edificado. Acreditamos numa soberania digital onde o
+                controlo, a segurança e a velocidade pertencem a quem cá opera.”
+            </blockquote>
+            <cite class="manifesto-author">
+                — A Equipa de Engenharia e Estratégia da SPACEALL
+            </cite>
+        </div>
+    </section>
+
+    <!-- 6. Chamada para Ação Institucional (CTA) -->
+    <section class="uk-container uk-section">
+        <div class="cta-banner uk-padding-large uk-text-center">
+            <span class="section-kicker">CHAMADA PARA AÇÃO INSTITUCIONAL</span>
+            <h2 class="section-title uk-margin-small-top">
+                Vamos construir o próximo capítulo da tecnologia em Angola?
+            </h2>
+            <p class="cta-text">
+                Junte-se às organizações que escolheram a inovação, a autonomia e a verdadeira engenharia de ponta.
+            </p>
+            <div class="hero-actions uk-flex-center uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/desenhe-sua-ligacao">
+                    Desenhe a sua ligação
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/contacto">
+                    Conheça os nossos fundadores e equipa
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-form></app-form>
+<app-rodape></app-rodape>

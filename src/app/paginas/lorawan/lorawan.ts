@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 import { Menu } from '../../layout/menu/menu';
 import { Rodape } from '../../layout/rodape/rodape';
@@ -10,7 +11,8 @@ import { Form } from '../../layout/form/form';
   imports: [
     Menu,
     Rodape,
-    Form
+    Form,
+    RouterLink
   ],
   templateUrl: './lorawan.html',
   styleUrl: './lorawan.css'
@@ -23,18 +25,18 @@ export class Lorawan {
   ) {
 
     /* ✅ TITLE */
-    this.title.setTitle('SPACEALL | Conectividade LoRaWAN para IoT Empresarial em Angola');
+    this.title.setTitle('SPACEALL | Multi-homing BGP para empresas em Angola');
 
     /* ✅ META DESCRIPTION */
     this.meta.addTag({
       name: 'description',
-      content: 'Conectividade LoRaWAN para IoT Empresarial em Angola. Monitorização remota, sensores inteligentes, smart metering e automação com baixo consumo e longo alcance.'
+      content: 'Ligue filiais e centros de operação a múltiplos operadores para aumentar a resiliência e continuidade da rede empresarial.'
     });
 
     /* ✅ KEYWORDS */
     this.meta.addTag({
       name: 'keywords',
-      content: 'LoRaWAN Angola, IoT Empresarial, rede de sensores, smart city Angola, smart agriculture, medição remota, LPWAN, conectividade de longo alcance, SPACEALL'
+      content: 'Multi-homing BGP, redundância de rede, continuidade empresarial, SPACEALL Angola'
     });
 
     /* ✅ ROBOTS */
@@ -52,12 +54,12 @@ export class Lorawan {
     /* ✅ OPEN GRAPH */
     this.meta.addTag({
       property: 'og:title',
-      content: 'SPACEALL | Conectividade LoRaWAN para IoT Empresarial em Angola'
+      content: 'SPACEALL | Multi-homing BGP para empresas em Angola'
     });
 
     this.meta.addTag({
       property: 'og:description',
-      content: 'Soluções LoRaWAN para IoT Empresarial em Angola, ideais para agricultura, energia, cidades inteligentes e indústria.'
+      content: 'Combine múltiplos operadores e caminhos de acesso para reforçar a continuidade de rede de filiais e centros de operação.'
     });
 
     this.meta.addTag({
@@ -72,7 +74,7 @@ export class Lorawan {
 
     this.meta.addTag({
       property: 'og:url',
-      content: 'https://spaceall.net/lorawan'
+      content: 'https://spaceall.net/multi-homing-bgp'
     });
 
     /* ✅ TWITTER */
@@ -83,12 +85,12 @@ export class Lorawan {
 
     this.meta.addTag({
       name: 'twitter:title',
-      content: 'SPACEALL | Conectividade LoRaWAN para IoT Empresarial em Angola'
+      content: 'SPACEALL | Multi-homing BGP para empresas em Angola'
     });
 
     this.meta.addTag({
       name: 'twitter:description',
-      content: 'Conectividade LoRaWAN de longo alcance e baixo consumo para soluções IoT empresariais.'
+      content: 'Redundância de rede e Multi-homing BGP para operações empresariais.'
     });
 
     this.meta.addTag({

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10212B"/>
+      <stop offset="1" stop-color="#203944"/>
+    </linearGradient>
+    <linearGradient id="device" x1="455" y1="290" x2="745" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#253B45"/>
+      <stop offset="1" stop-color="#14262F"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="1200" height="700" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v700H0z"/>
+  <circle cx="605" cy="380" r="160" fill="#76B91C" opacity=".12" filter="url(#glow)"/>
+  <path d="M0 554h1200v146H0z" fill="#152A33"/>
+  <path d="M0 554h1200" stroke="#39515A" stroke-width="3"/>
+
+  <path d="M196 364h178l87 63m-265 67h183l82-66m467-64h-174l-78 62m252 68H754l-77-66"
+        stroke="#76B91C" stroke-width="7" stroke-linecap="round" stroke-dasharray="3 17"/>
+  <path d="M846 366h124" stroke="#76B91C" stroke-width="7" stroke-linecap="round"/>
+
+  <g stroke="#B9D1D5" stroke-width="5">
+    <path d="M99 414v-65l52-31 52 31v65h-104Z" fill="#29434D"/>
+    <path d="M117 414v-44h68v44M130 367v-21m42 21v-21" fill="#142831"/>
+    <path d="M99 482v-65l52-31 52 31v65h-104Z" fill="#29434D"/>
+    <path d="M117 482v-44h68v44M130 435v-21m42 21v-21" fill="#142831"/>
+    <path d="M1000 414v-65l52-31 52 31v65h-104Z" fill="#29434D"/>
+    <path d="M1018 414v-44h68v44m-55-47v-21m42 21v-21" fill="#142831"/>
+    <path d="M1000 482v-65l52-31 52 31v65h-104Z" fill="#29434D"/>
+    <path d="M1018 482v-44h68v44m-55-47v-21m42 21v-21" fill="#142831"/>
+  </g>
+
+  <g transform="translate(888 247)">
+    <path d="M32 88h117a34 34 0 0 0 0-68 49 49 0 0 0-91-7A39 39 0 0 0 32 88Z"
+          fill="#29434D" stroke="#B9D1D5" stroke-width="5"/>
+    <path d="M90 43v39m-15-15 15 15 15-15" stroke="#76B91C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g>
+    <path d="m449 335 151-80 151 80v144l-151 81-151-81V335Z" fill="#0B1B22" opacity=".45"/>
+    <path d="m444 317 156-82 156 82v149l-156 83-156-83V317Z" fill="url(#device)" stroke="#AAC3C7" stroke-width="6" stroke-linejoin="round"/>
+    <path d="m444 317 156 83 156-83m-156 83v149" stroke="#AAC3C7" stroke-width="5" stroke-linejoin="round"/>
+    <path d="m501 347 99 52 99-52v87l-99 52-99-52v-87Z" fill="#1A3039"/>
+    <path d="m600 399 99-52" stroke="#76B91C" stroke-width="6"/>
+    <circle cx="659" cy="367" r="7" fill="#76B91C"/>
+    <path d="M533 436h35m19 0h14m18 0h35m-90 20h47" stroke="#B9D1D5" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="535" cy="301" r="7" fill="#76B91C"/>
+    <circle cx="565" cy="301" r="7" fill="#76B91C"/>
+    <circle cx="595" cy="301" r="7" fill="#76B91C"/>
+    <text x="600" y="510" fill="#E8F0E8" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3" text-anchor="middle">EDGE BOX</text>
+  </g>
+
+  <g fill="#76B91C">
+    <circle cx="374" cy="364" r="9"/>
+    <circle cx="374" cy="494" r="9"/>
+    <circle cx="826" cy="364" r="9"/>
+    <circle cx="826" cy="494" r="9"/>
+    <circle cx="974" cy="364" r="9"/>
+  </g>
+  <text x="600" y="625" fill="#C9D9D7" font-family="Arial, sans-serif" font-size="22" letter-spacing="4" text-anchor="middle">REDE PRIVADA · SAÍDA SEGURA PARA A INTERNET</text>
+</svg>

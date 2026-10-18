@@ -1,130 +1,142 @@
-<section id="contact-form-section ">
+<section id="contact-form-section" class="form-section uk-section">
+    <div class="uk-container">
 
-    <div style="background : linear-gradient(190deg, #000, #444);">
-
-
-        <div class="uk-container">
-
-
-
-
-            <div class="uk-container uk-text-center uk-margin-large-top uk-margin-large-bottom">
-
-                <div class="uk-text-center">
-                    <p class="texto-fundo ">Fale Connosco
-                    </p>
-                </div>
-
-
-                <h1 class="texto-5"> Comece a sua Transição para Telecomunicação Off-Grid.
-                </h1>
-
-            </div>
-            <h2 style="font-family: inherit;" class="section-heading"></h2>
-
-            <p style="color: #fff; font-size: 1.5rem; text-align:center ">
-                A nossa equipa de engenharia e consultoria está pronta para analisar o seu desafio de conectividade e
-                apresentar
-                uma <strong>Proposta de Solução Técnica Gratuita</strong> em 48 horas.
+        <div class="form-header uk-text-center uk-margin-large-bottom">
+            <p class="texto-fundo">FALE COM A SPACEALL</p>
+            <h1 class="texto-5 uk-margin-small-top uk-margin-small-bottom">
+                Desenhe uma rede que acompanha a sua operação.
+            </h1>
+            <p class="section-subheading">
+                Partilhe os locais, utilizadores e sistemas que precisa de ligar. A nossa equipa poderá avaliar o
+                cenário e preparar uma proposta adequada à sua operação.
             </p>
+        </div>
+
+        <div class="uk-card uk-card-body configurator-card form-card-wrapper">
+            <div class="step-header uk-margin-medium-bottom">
+                <span class="step-badge">CONTACTO COMERCIAL &amp; TÉCNICO</span>
+                <h2 class="step-title">Dados da sua Operação</h2>
+                <p class="step-description">
+                    Preencha os dados abaixo para que a nossa equipa de engenharia avalie o seu cenário e entre em contacto.
+                </p>
+            </div>
 
             <form [formGroup]="contactForm" (ngSubmit)="submitForm($event)" class="contact-form">
 
                 <div class="form-row">
                     <div class="form-group half-width">
-                        <label for="full_name">Nome Completo</label>
-                        <input type="text" id="full_name" formControlName="full_name" required>
+                        <label class="form-label" for="full_name">Nome Completo *</label>
+                        <input type="text" id="full_name" class="uk-input dark-input" formControlName="full_name"
+                            placeholder="Ex: Eng. Manuel Silva" required>
                     </div>
 
                     <div class="form-group half-width">
-                        <label for="email">Email Corporativo</label>
-                        <input type="email" id="email" formControlName="email" placeholder="nome@suaempresa.com"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half-width">
-                        <label for="company_name">Empresa</label>
-                        <input type="text" id="company_name" formControlName="company_name" required>
-                    </div>
-
-                    <div class="form-group half-width">
-                        <label for="job_title">Cargo</label>
-                        <input type="text" id="job_title" formControlName="job_title" required>
+                        <label class="form-label" for="email">Email Corporativo *</label>
+                        <input type="email" id="email" class="uk-input dark-input" formControlName="email"
+                            placeholder="nome@suaempresa.com" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group half-width">
-                        <label for="country">País</label>
-                        <input type="text" id="country" formControlName="country" required>
+                        <label class="form-label" for="company_name">Empresa *</label>
+                        <input type="text" id="company_name" class="uk-input dark-input" formControlName="company_name"
+                            placeholder="Ex: Grupo Empresarial ABC, Lda" required>
                     </div>
 
                     <div class="form-group half-width">
-                        <label for="challenge">Desafio</label>
-                        <select id="challenge" formControlName="challenge" required>
-                            <option value="" disabled selected>Selecione uma opção</option>
-                            <option value="custos_variaveis">Eliminar custos variáveis de redes celulares.</option>
-                            <option value="off_grid">Garantir conectividade Off-Grid.</option>
-                            <option value="rastreio">Monitorização de frotas.</option>
-                            <option value="sensores_longevidade">Sensores IoT de longa duração.</option>
-                            <option value="soberania_dados">Soberania de Dados e Cloud IoT Angola.</option>
-                            <option value="outro">Outro</option>
+                        <label class="form-label" for="job_title">Cargo *</label>
+                        <input type="text" id="job_title" class="uk-input dark-input" formControlName="job_title"
+                            placeholder="Ex: Diretor de TI, CTO, Gestor de Redes" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label class="form-label" for="country">País *</label>
+                        <input type="text" id="country" class="uk-input dark-input" formControlName="country"
+                            placeholder="Ex: Angola" required>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label class="form-label" for="challenge">Desafio *</label>
+                        <select id="challenge" class="uk-select dark-select" formControlName="challenge" required>
+                            <option value="" disabled>Selecione uma opção</option>
+                            <option value="mesh_branches">Preciso de interligar as minhas filiais e servidores de
+                                forma privada</option>
+                            <option value="eliminate_mpls">Eliminar a dependência de circuitos dedicados / VPNs
+                                tradicionais instáveis</option>
+                            <option value="multi_asn_egress">Adicionar redundância Multi-ASN sem contratar novos
+                                links físicos</option>
+                            <option value="vpn_remote">Preciso de acesso remoto seguro para a equipa (com IP
+                                angolano)</option>
+                            <option value="cloud_hybrid_mesh">Criar uma rede híbrida (On-Premises + Cloud +
+                                Datacenters)</option>
+                            <option value="technical_proposal">Solicitar proposta comercial</option>
+                            <option value="outro">Outro assunto</option>
+                            <!-- Serviços Complementares: DR, Backup & Armazenamento -->
+                            <option value="dr_tunnels">Túneis privados para Disaster Recovery (Veeam, Acronis, etc.)
+                            </option>
+                            <option value="backup_site_cloud">Implementar Backup automatizado (Site-to-Site ou
+                                Site-to-Cloud)</option>
+                            <option value="sovereign_storage">Armazenamento Remoto Soberano (Object &amp; Block Storage S3)
+                            </option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group full-width">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" rows="5" formControlName="message"></textarea>
+                <div class="form-group full-width uk-margin-small-top">
+                    <label class="form-label" for="message">Mensagem (Opcional)</label>
+                    <textarea id="message" rows="5" class="uk-textarea dark-textarea" formControlName="message"
+                        placeholder="Descreva os locais, número de filiais, sistemas ou requisitos específicos da sua operação..."></textarea>
                 </div>
 
-                <button type="submit" class="submit-button uk-border-pill">
-                    Solicitar a Proposta Técnica Gratuita
-                </button>
+                <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                    <span class="step-summary-hint">
+                        Faturação local <strong>100% em Kwanzas (AOA)</strong> sem risco cambial.
+                    </span>
+                    <button type="submit" class="uk-button uk-border-pill botao-verde submit-button">
+                        Solicitar contacto comercial <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                    </button>
+                </div>
 
             </form>
         </div>
     </div>
 
+    <!-- VALIDATION MODAL -->
+    <div id="validation-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body glass-modal">
+            <h3 class="modal-title">❗ Campos Incompletos</h3>
+            <p>Por favor preencha todos os campos obrigatórios antes de enviar.</p>
+            <button class="uk-button uk-button-default uk-modal-close modal-button">Fechar</button>
+        </div>
+    </div>
 
-<!-- VALIDATION MODAL -->
-<div id="validation-modal" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body glass-modal">
-      <h3 class="modal-title">❗ Campos Incompletos</h3>
-      <p>Por favor preencha todos os campos obrigatórios antes de enviar.</p>
-      <button class="uk-button uk-button-default uk-modal-close modal-button">Fechar</button>
-  </div>
-</div>
+    <!-- LOADING MODAL -->
+    <div id="loading-modal" uk-modal bg-close="false" esc-close="false">
+        <div class="uk-modal-dialog uk-modal-body glass-modal">
+            <h3 class="modal-title">⏳ A Enviar...</h3>
+            <p>Aguarde enquanto processamos a sua solicitação.</p>
+            <div uk-spinner="ratio: 1.5"></div>
+        </div>
+    </div>
 
-<!-- LOADING MODAL -->
-<div id="loading-modal" uk-modal bg-close="false" esc-close="false">
-  <div class="uk-modal-dialog uk-modal-body glass-modal">
-      <h3 class="modal-title">⏳ A Enviar...</h3>
-      <p>Aguarde enquanto processamos a sua solicitação.</p>
-      <div uk-spinner="ratio: 1.5"></div>
-  </div>
-</div>
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body glass-modal">
+            <h3 class="modal-title success">✔ Mensagem Enviada</h3>
+            <p>A sua solicitação foi enviada com sucesso. A equipa SPACEALL analisará a sua mensagem.</p>
+            <button class="uk-button uk-button-primary uk-modal-close modal-button success-btn">OK</button>
+        </div>
+    </div>
 
-<!-- SUCCESS MODAL -->
-<div id="success-modal" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body glass-modal">
-      <h3 class="modal-title success">✔ Mensagem Enviada</h3>
-      <p>A sua solicitação foi enviada com sucesso! A nossa equipa irá responder em até 48 horas.</p>
-      <button class="uk-button uk-button-primary uk-modal-close modal-button success-btn">OK</button>
-  </div>
-</div>
-
-<!-- ERROR MODAL -->
-<div id="error-modal" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body glass-modal">
-      <h3 class="modal-title error">⚠ Erro no Envio</h3>
-      <p>Não foi possível enviar a sua mensagem. Por favor, tente novamente mais tarde.</p>
-      <button class="uk-button uk-button-default uk-modal-close modal-button error-btn">Fechar</button>
-  </div>
-</div>
-
-
-
+    <!-- ERROR MODAL -->
+    <div id="error-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body glass-modal">
+            <h3 class="modal-title error">⚠ Erro no Envio</h3>
+            <p>Não foi possível enviar a sua mensagem. Por favor, tente novamente mais tarde.</p>
+            <button class="uk-button uk-button-default uk-modal-close modal-button error-btn">Fechar</button>
+        </div>
+    </div>
 </section>

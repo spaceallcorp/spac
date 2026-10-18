@@ -1,0 +1,150 @@
+<app-menu></app-menu>
+
+<main class="solution-page">
+    <!-- 1. Hero Section -->
+    <header class="page-banner uk-text-left">
+        <div class="uk-padding-large uk-container">
+            <p class="texto-fundo">MANAGED EXIT NODES &amp; MULTI-HOMING</p>
+            <h1 class="hero-title uk-margin-small-top uk-margin-small-bottom">
+                Controle absoluto sobre as rotas e saídas de internet da sua empresa.
+            </h1>
+            <p class="uk-text-lead hero-subtitle">
+                Agregue múltiplos operadores, adicione redundância Multi-ASN e otimize o tráfego de saída da sua
+                organização sem a necessidade de novos links físicos ou burocracias complexas.
+            </p>
+            <div class="hero-actions uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/desenhe-sua-ligacao">
+                    Desenhe a sua ligação
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/contacto">
+                    Falar com a engenharia
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Secção de Contexto: O Problema do "Ponto Único de Falha" -->
+    <section class="uk-container uk-section">
+        <div class="context-panel uk-padding-large">
+            <div class="uk-grid-large uk-flex-middle" uk-grid>
+                <div class="uk-width-2-5@m">
+                    <span class="section-kicker">O PROBLEMA DO "PONTO ÚNICO DE FALHA"</span>
+                    <h2 class="section-title uk-margin-small-top">
+                        A sua operação não pode parar só porque uma operadora falhou.
+                    </h2>
+                </div>
+                <div class="uk-width-3-5@m">
+                    <p class="context-text">
+                        Muitas empresas em Angola contratam links de múltiplos fornecedores (por exemplo, fibra de uma
+                        operadora e satélite ou 4G de outra), mas acabam por gerir tudo de forma manual, sofrendo com
+                        quedas de sessão, rotas ineficientes e perda de produtividade quando o operador principal falha.
+                    </p>
+                    <p class="context-text context-highlight uk-margin-remove-bottom">
+                        Com os <strong>Nós de Saída Geridos (Managed Exit Nodes)</strong> da <strong>SPACEALL</strong>,
+                        a sua rede ganha inteligência de encaminhamento (<strong>Multi-Homing</strong>). Nós tratamos da
+                        complexidade do BGP e dos ASNs para que a sua empresa tenha failover automático e tráfego
+                        otimizado em tempo real.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Os 3 Pilares Tecnológicos da Solução -->
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-large-bottom">
+            <span class="section-kicker">PILARES TECNOLÓGICOS</span>
+            <h2 class="section-title uk-margin-small-top">Os 3 Pilares Tecnológicos da Solução</h2>
+        </div>
+
+        <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+            @for (pilar of pilares; track pilar.codigo) {
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-icon" [attr.uk-icon]="'icon: ' + pilar.icone + '; ratio: 1.25'" aria-hidden="true"></span>
+                            <span class="pillar-badge">PILAR {{ pilar.codigo }}</span>
+                        </div>
+                        <h3 class="uk-card-title pillar-title">{{ pilar.titulo }}</h3>
+                        <p class="pillar-description">{{ pilar.descricao }}</p>
+                        <div class="pillar-benefit">
+                            <span class="benefit-label">Benefício</span>
+                            <p class="uk-margin-remove">{{ pilar.beneficio }}</p>
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- 4. Como Funciona na Prática (Arquitetura) -->
+    <section class="ecosystem-strip uk-section">
+        <div class="uk-container">
+            <div class="uk-text-center uk-margin-large-bottom">
+                <span class="section-kicker">COMO FUNCIONA NA PRÁTICA (ARQUITETURA)</span>
+                <h2 class="section-title uk-margin-small-top">Inteligência na borda, simplicidade na operação.</h2>
+                <p class="section-intro">
+                    Através dos nossos Edge Appliances instalados na sua sede ou filiais, a SPACEALL monitoriza
+                    continuamente a latência, a perda de pacotes e a disponibilidade de todos os links conectados.
+                </p>
+            </div>
+
+            <div class="uk-grid-medium uk-child-width-1-2@m uk-grid-match" uk-grid>
+                @for (item of mecanismosArquitetura; track item.titulo) {
+                    <div>
+                        <article class="uk-card uk-card-default uk-card-body integration-card">
+                            <span class="pillar-icon" [attr.uk-icon]="'icon: ' + item.icone + '; ratio: 1.2'" aria-hidden="true"></span>
+                            <h3 class="uk-card-title">{{ item.titulo }}</h3>
+                            <p class="uk-margin-remove-bottom">{{ item.descricao }}</p>
+                        </article>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Vantagens Estratégicas para o Negócio -->
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-large-bottom">
+            <span class="section-kicker">VALOR EMPRESARIAL</span>
+            <h2 class="section-title uk-margin-small-top">Vantagens Estratégicas para o Negócio</h2>
+        </div>
+
+        <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+            @for (vantagem of vantagens; track vantagem.titulo) {
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body usecase-card">
+                        <span class="pillar-icon" [attr.uk-icon]="'icon: ' + vantagem.icone + '; ratio: 1.2'" aria-hidden="true"></span>
+                        <h3 class="uk-card-title">{{ vantagem.titulo }}</h3>
+                        <p class="uk-margin-remove-bottom">{{ vantagem.descricao }}</p>
+                    </article>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- 6. Secção Comercial & CTA Final -->
+    <section class="uk-container uk-section">
+        <div class="cta-banner uk-padding-large uk-text-center">
+            <span class="section-kicker">ARQUITETURA RESILIENTE</span>
+            <h2 class="section-title uk-margin-small-top">Elimine os gargalos de conectividade da sua empresa.</h2>
+            <p class="cta-text">
+                Conte com a engenharia da <strong>SPACEALL</strong> para desenhar uma arquitetura de rede resiliente e
+                preparada para o crescimento.
+            </p>
+            <div class="hero-actions uk-flex-center uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/desenhe-sua-ligacao">
+                    Desenhe a sua ligação
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/contacto">
+                    Solicitar análise técnica
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-form></app-form>
+<app-rodape></app-rodape>

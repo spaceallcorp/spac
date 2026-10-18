@@ -1,0 +1,205 @@
+<app-menu></app-menu>
+
+<main class="solution-page">
+    <!-- 1. Hero Section (Cabeçalho da Página) -->
+    <header class="page-banner uk-text-left">
+        <div class="uk-padding-large uk-container">
+            <p class="texto-fundo">ANGOLANVPN • ZTNA &amp; ACESSO REMOTO SOBERANO</p>
+            <h1 class="hero-title uk-margin-small-top uk-margin-small-bottom">
+                Acesso remoto corporativo com identidade e IP Angolano 100% Soberano.
+            </h1>
+            <p class="uk-text-lead hero-subtitle">
+                Conecte executivos, equipas distribuídas e filiais aos recursos internos da empresa com encriptação
+                avançada Zero-Trust, baixa latência e total conformidade com a realidade digital de Angola. Visite o
+                portal oficial em
+                <a class="inline-green-anchor" [href]="officialSiteUrl" target="_blank" rel="noopener noreferrer">angolanvpn.com</a>.
+            </p>
+            <div class="hero-actions uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" [href]="playStoreUrl" target="_blank"
+                    rel="noopener noreferrer">
+                    Descarregar na Google Play
+                    <span class="uk-margin-small-left" uk-icon="icon: download" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" [href]="officialSiteUrl"
+                    target="_blank" rel="noopener noreferrer">
+                    Aceder ao Site Oficial (angolanvpn.com)
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Validação de Mercado: Dados Estatísticos & Crescimento na Play Store -->
+    <section class="uk-container uk-section">
+        <div class="context-panel uk-padding-large">
+            <div class="uk-text-center uk-margin-large-bottom">
+                <span class="section-kicker">VALIDAÇÃO DE MERCADO &amp; CRESCIMENTO NA PLAY STORE</span>
+                <h2 class="section-title uk-margin-small-top">
+                    A aplicação de referência em Angola.
+                </h2>
+                <p class="section-intro">
+                    A <strong>AngolanVPN</strong> consolidou-se rapidamente como a ferramenta líder de mercado para
+                    encriptação e geolocalização nacional. Os relatórios recentes de desempenho na Google Play Store
+                    refletem uma adoção massiva e um crescimento exponencial, evidenciado por:
+                </p>
+            </div>
+
+            <!-- Métricas de Crescimento -->
+            <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+                @for (metrica of metricas; track metrica.titulo) {
+                    <div>
+                        <article class="uk-card uk-card-default uk-card-body metric-card">
+                            <div class="pillar-header">
+                           <span class="metric-highlight">{{ metrica.destaque }}</span>
+                            </div>
+                            <h3 class="uk-card-title">{{ metrica.titulo }}</h3>
+                            <p class="uk-margin-remove-bottom">{{ metrica.descricao }}</p>
+                        </article>
+                    </div>
+                }
+            </div>
+
+            <!-- Grid de Indicadores Chave / Badges de Performance -->
+            <div class="performance-badges-grid uk-grid-small uk-child-width-1-3@m uk-grid-match uk-margin-large-top" uk-grid>
+                <div>
+                    <div class="performance-badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <div>
+                            <strong class="badge-title">IP Soberano:</strong>
+                            <span>Atribuição garantida de endereçamento IP geolocalizado em Angola.</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="performance-badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <div>
+                            <strong class="badge-title">Zero-Trust (ZTNA):</strong>
+                            <span>Segurança avançada baseada no princípio de menor privilégio.</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="performance-badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <div>
+                            <strong class="badge-title">Instalação Direta:</strong>
+                            <span>
+                                Disponível na
+                                <a class="inline-green-anchor" [href]="playStoreUrl" target="_blank" rel="noopener noreferrer">Google Play Store</a>
+                                e gerida em
+                                <a class="inline-green-anchor" [href]="officialSiteUrl" target="_blank" rel="noopener noreferrer">angolanvpn.com</a>.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Os 3 Pilares da AngolanVPN para Empresas -->
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-large-bottom">
+            <span class="section-kicker">ARQUITETURA EMPRESARIAL</span>
+            <h2 class="section-title uk-margin-small-top">Os 3 Pilares da AngolanVPN para Empresas</h2>
+        </div>
+
+        <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+            @for (pilar of pilares; track pilar.codigo) {
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-icon" [attr.uk-icon]="'icon: ' + pilar.icone + '; ratio: 1.25'" aria-hidden="true"></span>
+                            <span class="pillar-badge">PILAR {{ pilar.codigo }}</span>
+                        </div>
+                        <h3 class="uk-card-title pillar-title">{{ pilar.titulo }}</h3>
+                        <p class="pillar-description">{{ pilar.descricao }}</p>
+                        <div class="pillar-benefit">
+                            <span class="benefit-label">Benefício</span>
+                            <p class="uk-margin-remove">{{ pilar.beneficio }}</p>
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- 4. Ecossistema Multi-Plataforma & Presença Oficial -->
+    <section class="ecosystem-strip uk-section">
+        <div class="uk-container">
+            <div class="uk-text-center uk-margin-large-bottom">
+                <span class="section-kicker">ECOSSISTEMA MULTI-PLATAFORMA &amp; PRESENÇA OFICIAL</span>
+                <h2 class="section-title uk-margin-small-top">
+                    Segurança em qualquer dispositivo, centralizada em
+                    <a class="inline-green-anchor" [href]="officialSiteUrl" target="_blank" rel="noopener noreferrer">angolanvpn.com</a>.
+                </h2>
+                <p class="section-intro">
+                    Disponibilizada de forma transparente para o público através do
+                    <a class="inline-green-anchor" [href]="playStoreUrl" target="_blank" rel="noopener noreferrer">link oficial na Google Play Store</a>
+                    e gerida centralmente através do nosso ecossistema em
+                    <a class="inline-green-anchor" [href]="officialSiteUrl" target="_blank" rel="noopener noreferrer">angolanvpn.com</a>,
+                    a AngolanVPN oferece ativação instantânea com um clique:
+                </p>
+            </div>
+
+            <div class="uk-grid-medium uk-child-width-1-2@m uk-grid-match" uk-grid>
+                @for (recurso of recursosEcossistema; track recurso.titulo) {
+                    <div>
+                        <article class="uk-card uk-card-default uk-card-body integration-card">
+                            <span class="pillar-icon" [attr.uk-icon]="'icon: ' + recurso.icone + '; ratio: 1.2'" aria-hidden="true"></span>
+                            <h3 class="uk-card-title">{{ recurso.titulo }}</h3>
+                            <p class="uk-margin-remove-bottom">{{ recurso.descricao }}</p>
+                        </article>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Casos de Uso Corporativo -->
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-large-bottom">
+            <span class="section-kicker">APLICAÇÕES PRÁTICAS</span>
+            <h2 class="section-title uk-margin-small-top">Casos de Uso Corporativo</h2>
+        </div>
+
+        <div class="uk-grid-medium uk-child-width-1-3@m uk-grid-match" uk-grid>
+            @for (caso of casosDeUso; track caso.titulo) {
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body usecase-card">
+                        <span class="pillar-icon" [attr.uk-icon]="'icon: ' + caso.icone + '; ratio: 1.2'" aria-hidden="true"></span>
+                        <h3 class="uk-card-title">{{ caso.titulo }}</h3>
+                        <p class="uk-margin-remove-bottom">{{ caso.descricao }}</p>
+                    </article>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- 6. Secção Comercial & CTA Final -->
+    <section class="uk-container uk-section">
+        <div class="cta-banner uk-padding-large uk-text-center">
+            <span class="section-kicker">LICENCIAMENTO CORPORATIVO</span>
+            <h2 class="section-title uk-margin-small-top">
+                Equipe a sua força de trabalho com a segurança digital comprovada pelo mercado.
+            </h2>
+            <p class="cta-text">
+                Faturação simplificada em <strong>Kwanzas (AOA)</strong> para pacotes corporativos, com suporte técnico
+                dedicado em Luanda e gestão em
+                <a class="inline-green-anchor" [href]="officialSiteUrl" target="_blank" rel="noopener noreferrer">angolanvpn.com</a>.
+            </p>
+            <div class="hero-actions uk-flex-center uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/contacto">
+                    Solicitar licenças corporativas
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/desenhe-sua-ligacao">
+                    Desenhe a sua ligação
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-form></app-form>
+<app-rodape></app-rodape>

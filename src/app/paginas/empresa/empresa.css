@@ -1,0 +1,442 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: #080808;
+    color: #fff;
+}
+
+:host .page-banner {
+    --banner-image: url('/img/unsplash-business-team.jpg');
+}
+
+:host .page-banner .texto-fundo {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid rgba(166, 230, 90, 0.42);
+    border-radius: 999px;
+    background: rgba(118, 185, 28, 0.14);
+    color: #c4ff77 !important;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+:host .hero-title {
+    max-width: 860px;
+    color: #fff !important;
+    font-family: inherit !important;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+:host .hero-subtitle {
+    max-width: 780px;
+    color: #e0e0e0 !important;
+    font-family: inherit;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+:host .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+:host .botao-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff !important;
+    font-weight: 600;
+    border: 1px solid rgba(196, 255, 119, 0.4);
+    text-decoration: none !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+:host .botao-secundario:hover,
+:host .botao-secundario:focus-visible {
+    background: rgba(118, 185, 28, 0.16);
+    border-color: #c4ff77;
+    color: #c4ff77 !important;
+    transform: translateY(-2px);
+}
+
+:host .section-kicker {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(166, 230, 90, 0.38);
+    border-radius: 999px;
+    background: rgba(118, 185, 28, 0.08);
+    color: #c4ff77;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+:host .section-title {
+    color: #fff !important;
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.18;
+}
+
+:host .section-intro {
+    max-width: 740px;
+    margin: 12px auto 0;
+    color: #d4d4d4;
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+:host .context-panel {
+    border: 1px solid rgba(166, 230, 90, 0.28);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(18, 24, 15, 0.65));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 32px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(16px);
+}
+
+:host .essence-lead {
+    color: #c4ff77;
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+:host .context-text {
+    color: #e2e2e2;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+:host .context-text strong {
+    color: #c4ff77;
+}
+
+:host .context-highlight {
+    padding-left: 16px;
+    border-left: 3px solid #76b91c;
+    color: #fff;
+}
+
+/* Visual 1: Skyline de Luanda */
+:host .skyline-showcase {
+    overflow: hidden;
+    border: 1px solid rgba(166, 230, 90, 0.32);
+    border-radius: 20px;
+    background: #0b0e0b;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
+}
+
+:host .skyline-media {
+    position: relative;
+    overflow: hidden;
+    max-height: 410px;
+}
+
+:host .skyline-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 410px;
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(1.06) brightness(0.92);
+    transition: transform 0.6s ease;
+}
+
+:host .skyline-showcase:hover .skyline-media img {
+    transform: scale(1.02);
+}
+
+:host .skyline-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(8, 12, 8, 0.15) 0%,
+        rgba(10, 22, 10, 0.18) 55%,
+        rgba(8, 10, 8, 0.88) 100%
+    );
+    pointer-events: none;
+}
+
+:host .skyline-badges {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+:host .skyline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(196, 255, 119, 0.42);
+    border-radius: 999px;
+    background: rgba(8, 12, 8, 0.78);
+    color: #eaffcf;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+:host .skyline-caption {
+    padding: 14px 20px;
+    border-top: 1px solid rgba(166, 230, 90, 0.18);
+    background: rgba(14, 19, 13, 0.9);
+    color: #c6d1c2;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+:host .pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8be025;
+    box-shadow: 0 0 10px #8be025;
+}
+
+/* Cards & Pilares */
+:host .uk-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    color: #fff;
+    backdrop-filter: blur(14px);
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+:host .uk-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(166, 230, 90, 0.55);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32), 0 0 20px rgba(118, 185, 28, 0.14);
+}
+
+:host .uk-card-title {
+    color: #c4ff77;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+:host .pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+:host .pillar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(166, 230, 90, 0.38);
+    border-radius: 14px;
+    background: rgba(118, 185, 28, 0.12);
+    color: #c4ff77;
+}
+
+:host .pillar-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #a6e65a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+:host .pillar-description {
+    flex: 1;
+    color: #e0e0e0;
+    line-height: 1.65;
+}
+
+:host .scale-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin-top: 16px;
+    padding: 7px 14px;
+    border: 1px solid rgba(166, 230, 90, 0.34);
+    border-radius: 999px;
+    background: rgba(118, 185, 28, 0.11);
+    color: #c4ff77;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Secção 3: Ecossistema e Mapa de Angola */
+:host .ecosystem-strip {
+    background: linear-gradient(135deg, rgba(11, 16, 9, 0.9), rgba(20, 26, 18, 0.65), rgba(8, 11, 7, 0.92));
+    border-block: 1px solid rgba(166, 230, 90, 0.16);
+}
+
+:host .angola-map-card {
+    border: 1px solid rgba(166, 230, 90, 0.32);
+    border-radius: 24px;
+    background: radial-gradient(circle at 50% 38%, rgba(118, 185, 28, 0.14), rgba(12, 16, 11, 0.9) 70%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+:host .map-card-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+:host .map-card-title {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+:host .map-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    border: 1px solid rgba(166, 230, 90, 0.38);
+    border-radius: 999px;
+    background: rgba(118, 185, 28, 0.12);
+    color: #c4ff77;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+:host .angola-map-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background: rgba(6, 9, 6, 0.65);
+}
+
+:host .angola-map-frame img {
+    max-height: 310px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 22px rgba(118, 185, 28, 0.25));
+}
+
+:host .map-card-description {
+    color: #d6ddd3;
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+:host .province-node {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border: 1px solid rgba(166, 230, 90, 0.24);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+:host .province-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+:host .province-role {
+    color: #a6e65a;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Secção 4: Diferenciais */
+:host .differential-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 1.45rem;
+}
+
+/* Secção 5: Manifesto */
+:host .manifesto-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(166, 230, 90, 0.38);
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(18, 28, 13, 0.88), rgba(10, 13, 9, 0.94));
+    box-shadow: inset 0 1px 0 rgba(196, 255, 119, 0.14), 0 16px 40px rgba(0, 0, 0, 0.38);
+}
+
+:host .manifesto-quote {
+    max-width: 860px;
+    margin-inline: auto;
+    border: none;
+    color: #fff;
+    font-size: clamp(1.25rem, 2.3vw, 1.7rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+:host .manifesto-author {
+    display: inline-block;
+    color: #c4ff77;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Secção 6: CTA Final */
+:host .cta-banner {
+    border: 1px solid rgba(166, 230, 90, 0.45);
+    border-radius: 26px;
+    background: linear-gradient(145deg, rgba(118, 185, 28, 0.16), rgba(255, 255, 255, 0.05), rgba(10, 14, 8, 0.8));
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.32), 0 0 24px rgba(118, 185, 28, 0.14);
+}
+
+:host .cta-text {
+    max-width: 680px;
+    margin: 12px auto 0;
+    color: #e8e8e8;
+    font-size: 1.15rem;
+}
+
+@media (max-width: 639px) {
+    :host .skyline-badges {
+        position: static;
+        padding: 12px 16px 0;
+        background: rgba(14, 19, 13, 0.9);
+    }
+}
+

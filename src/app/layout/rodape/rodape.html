@@ -4,65 +4,82 @@
         <div class="footer-content">
 
             <!-- Column 1: Logo and Address -->
-            <div class="footer-column">
-                <ul class="footer-links">
-                    <li>
-                        <img class="footer-logo" src="/img/logo-180x32-spaceall.png" alt="SPACEALL - Conectividade e Cloud em Angola" itemprop="logo">
-                    </li>
-                    <li class="uk-margin-small-top"><b>Endereço</b></li>
-                    <li style="color: white" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <span itemprop="streetAddress">Av 21 de Janeiro, S34-36, Centro Comercial Nosso Centro, Morro Bento</span><br>
-                        <span itemprop="addressLocality">Luanda</span>
-                    </li>
-                </ul>
+            <div class="footer-column footer-brand">
+                <a class="footer-logo-link" routerLink="/" aria-label="Voltar ao Início">
+                    <img class="footer-logo" src="/img/logo-180x32-spaceall.png"
+                        alt="SPACEALL Private Network - redes empresariais em Angola" itemprop="logo">
+                </a>
+                <p class="footer-tagline">
+                    Redes privadas overlay (L3) e conectividade empresarial soberana em Angola.
+                </p>
+                <div class="footer-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span class="footer-label">
+                        <span uk-icon="icon: location; ratio: 0.9" aria-hidden="true"></span> Endereço
+                    </span>
+                    <p class="uk-margin-remove">
+                        <span itemprop="streetAddress">Av. 21 de Janeiro, S34-36, Centro Comercial Nosso Centro, Morro Bento</span><br>
+                        <span itemprop="addressLocality">Luanda, Angola</span>
+                    </p>
+                </div>
             </div>
 
             <!-- Column 2: Quick Access -->
             <div class="footer-column">
-                <h3>Acesso Rápido</h3>
+                <h3 class="footer-heading">Acesso Rápido</h3>
                 <ul class="footer-links">
-                    <li><a routerLink="/cloud">Nuvem Corporativa e IoT</a></li>
-                    <li><a routerLink="/voz_video">Voz & Vídeo Empresarial</a></li>
-                    <li><a routerLink="/wifi-halow">Internet e WiFi HaLow</a></li>
-                    <li><a routerLink="/lorawan">Conectividade LoRaWAN</a></li>
+                    <li><a routerLink="/empresa">A Empresa</a></li>
+                    <li><a routerLink="/ligacoes-privadas">Ligações Privadas</a></li>
+                    <li><a routerLink="/nos-de-saida">Nós de Saída</a></li>
+                    <li><a routerLink="/angolanvpn">AngolanVPN</a></li>
+                    <li>
+                        <a class="footer-link-cta" routerLink="/desenhe-sua-ligacao">
+                            Configurador ENaaS
+                            <span uk-icon="icon: arrow-right; ratio: 0.85" aria-hidden="true"></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <!-- Column 3: Policies -->
             <div class="footer-column">
-                <h3>Políticas</h3>
+                <h3 class="footer-heading">Políticas &amp; Institucional</h3>
                 <ul class="footer-links">
                     <li><a routerLink="/politicas">Política de Privacidade</a></li>
                     <li><a routerLink="/termos">Termos e Condições</a></li>
+                    <li><a routerLink="/contacto">Falar com a Engenharia</a></li>
                 </ul>
             </div>
 
             <!-- Column 4: Contact & Social -->
             <div class="footer-column">
-                <h3>Contacto e Parcerias</h3>
-                <ul class="footer-links uk-margin-small-top">
-                    <li style="color: white">
-                        <a href="mailto:contact@spaceall.net" itemprop="email">
-                            <span class="uk-margin-small-right" uk-icon="mail"></span> contact@spaceall.net
+                <h3 class="footer-heading">Contacto e Parcerias</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-email-link" href="mailto:contact@spaceall.net" itemprop="email">
+                            <span class="footer-icon-badge" uk-icon="icon: mail; ratio: 0.95" aria-hidden="true"></span>
+                            <span>contact@spaceall.net</span>
                         </a>
                     </li>
                 </ul>
 
-                <ul class="footer-links">
-                    <li class="margem-superior uk-margin-small-top">
-                        <b>Siga-nos</b>
-                        <div class="social-icons">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/spaceall/" uk-icon="linkedin" title="LinkedIn SPACEALL"></a>
-                        </div>
-                    </li>
-                </ul>
+                <div class="footer-social uk-margin-medium-top">
+                    <span class="footer-label">Siga-nos</span>
+                    <div class="social-icons">
+                        <a class="social-pill" target="_blank" rel="noopener noreferrer"
+                            href="https://www.linkedin.com/company/spaceall/" uk-icon="icon: linkedin; ratio: 1.05"
+                            title="LinkedIn SPACEALL" aria-label="LinkedIn SPACEALL"></a>
+                    </div>
+                </div>
             </div>
 
         </div>
-    </div>
 
-    <!-- Footer Bottom Text -->
-    <p style="color: #787878" class="uk-text-center" itemprop="description">
-        &copy; 2025 SPACEALL - Soluções LoRaWAN, Wi-Fi, Internet e Cloud para Empresas em Angola. <br> Todos os direitos reservados.
-    </p>
+        <!-- Footer Bottom Text -->
+        <div class="footer-bottom">
+            <p class="copyright uk-margin-remove" itemprop="description">
+                &copy; 2026 <a routerLink="/" class="footer-brand-anchor">SPACEALL</a> — Redes privadas e conectividade
+                empresarial em Angola. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
 </footer>

@@ -1,0 +1,778 @@
+<app-menu></app-menu>
+
+<main class="configurator-page">
+    <!-- Header Banner -->
+    <header class="page-banner uk-text-left">
+        <div class="uk-padding uk-container">
+            <p class="texto-fundo">SOLICITE UMA PROPOSTA</p>
+            <h1 class="uk-margin-medium-bottom">Desenhe a sua ligação privada</h1>
+            <h3 class="uk-text-lead configurator-banner-lead">
+                Personalize a topologia, conectividade e serviços complementares da sua organização em Angola. Obtenha uma proposta de arquitectura L3 sob medida, com faturação 100% em Kwanzas (AOA).
+            </h3>
+        </div>
+    </header>
+
+    <div class="uk-container uk-section uk-section-small" id="configurator-flow">
+        
+        <!-- STEPPER PROGRESS BAR (5 Passos) -->
+        <nav class="stepper-nav" aria-label="Passos da configuração" *ngIf="!submissionSuccess()">
+            <ol class="stepper-list">
+                <li class="stepper-item" 
+                    [class.is-active]="currentStep() === 1" 
+                    [class.is-completed]="currentStep() > 1"
+                    (click)="goToStep(1)">
+                    <span class="stepper-badge">1</span>
+                    <span class="stepper-label">Topologia &amp; Sites</span>
+                </li>
+                <li class="stepper-item" 
+                    [class.is-active]="currentStep() === 2" 
+                    [class.is-completed]="currentStep() > 2"
+                    (click)="goToStep(2)">
+                    <span class="stepper-badge">2</span>
+                    <span class="stepper-label">Conectividade</span>
+                </li>
+                <li class="stepper-item" 
+                    [class.is-active]="currentStep() === 3" 
+                    [class.is-completed]="currentStep() > 3"
+                    (click)="goToStep(3)">
+                    <span class="stepper-badge">3</span>
+                    <span class="stepper-label">Serviços VAS</span>
+                </li>
+                <li class="stepper-item" 
+                    [class.is-active]="currentStep() === 4" 
+                    [class.is-completed]="currentStep() > 4"
+                    (click)="goToStep(4)">
+                    <span class="stepper-badge">4</span>
+                    <span class="stepper-label">Hardware Edge</span>
+                </li>
+                <li class="stepper-item" 
+                    [class.is-active]="currentStep() === 5" 
+                    [class.is-completed]="currentStep() > 5"
+                    (click)="goToStep(5)">
+                    <span class="stepper-badge">5</span>
+                    <span class="stepper-label">Dados &amp; Proposta</span>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- MAIN GRID: Left (Form Steps) & Right (Live Sticky Sidebar) -->
+        <div class="uk-grid-medium" uk-grid>
+            
+            <!-- LEFT COLUMN: The Steps -->
+            <div class="uk-width-1-1 uk-width-2-3@m">
+
+                <!-- TELA DE SUCESSO APÓS SUBMISSÃO -->
+                <div class="uk-card uk-card-body configurator-card success-card" *ngIf="submissionSuccess()">
+                    <div class="success-header uk-text-center">
+                        <span class="success-icon" uk-icon="icon: check; ratio: 2.2"></span>
+                        <h2 class="uk-margin-small-top">Desenho de Rede Recebido com Sucesso!</h2>
+                        <p class="uk-text-lead success-lead">
+                            Obrigado, <strong>{{ contactName() }}</strong>. A equipa de engenharia da SPACEALL já está a analisar a topologia para a <strong>{{ companyName() }}</strong>.
+                        </p>
+                    </div>
+
+                    <div class="success-summary-box uk-margin-medium-top">
+                        <h4 class="summary-subtitle">Resumo da Topologia Solicitada</h4>
+                        <ul class="uk-list uk-list-divider">
+                            <li><strong>Sede / Core:</strong> {{ headquartersLabel() }}</li>
+                            <li><strong>Locais Interligados:</strong> {{ totalSitesCount() }} locais (Sede + {{ branchesCount() }} filiais)</li>
+                            <li><strong>Abrangência:</strong> {{ selectedCoveragesLabel() }}</li>
+                            <li><strong>Destinos de Rede:</strong> {{ selectedDestinationsLabel() }}</li>
+                            <li><strong>Conectividade Overlay:</strong> {{ selectedCarriersLabel() }}</li>
+                            <li><strong>Nível de Resiliência:</strong> {{ selectedRedundancyLabel() }}</li>
+                            <li><strong>Appliance Escolhido:</strong> {{ selectedApplianceLabel() }} ({{ selectedModalidadeLabel() }})</li>
+                            <li><strong>Serviços Adicionais:</strong> 
+                                <span *ngIf="ztnaEnabled()">ZTNA ({{ ztnaUsersCount() }} users), </span>
+                                <span *ngIf="drTunnelsEnabled()">Túneis DR, </span>
+                                <span *ngIf="backupCloudEnabled()">Backup Cloud, </span>
+                                <span *ngIf="sovereignStorageEnabled()">Storage S3 ({{ storageCapacity() }})</span>
+                                <span *ngIf="activeVasCount() === 0">Nenhum selecionado</span>
+                            </li>
+                            <li><strong>Faturação &amp; Contrato:</strong> 100% em Kwanzas (AOA) sem risco cambial</li>
+                        </ul>
+                    </div>
+
+                    <div class="uk-alert uk-alert-primary uk-margin-medium-top" style="background: rgba(118, 185, 28, 0.12); border-color: rgba(166, 230, 90, 0.4); color: #e5e5e5;">
+                        <p>
+                            <span uk-icon="mail"></span> Enviámos uma cópia detalhada deste desenho técnico para <strong>{{ corporateEmail() }}</strong>. Um dos nossos engenheiros entrará em contacto nas próximas <strong>24 a 48 horas</strong> com o desenho executivo e a proposta comercial em AOA.
+                        </p>
+                    </div>
+
+                    <div class="uk-text-center uk-margin-large-top">
+                        <button type="button" class="uk-button uk-border-pill botao-verde uk-margin-small-right" (click)="resetConfigurator()">
+                            Configurar Nova Rede
+                        </button>
+                        <a routerLink="/" class="uk-button uk-button-default uk-border-pill" style="color: #fff; border-color: rgba(255,255,255,0.3);">
+                            Voltar à Página Inicial
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FLUXO DOS 5 PASSOS -->
+                <div class="steps-container" *ngIf="!submissionSuccess()">
+                    
+                    <!-- ==============================================
+                         PASSO 1: TOPOLOGIA & LOCALIZAÇÕES (SITES)
+                         ============================================== -->
+                    <div class="step-card uk-card uk-card-body configurator-card" *ngIf="currentStep() === 1">
+                        <div class="step-header">
+                            <span class="step-badge">PASSO 1 DE 5</span>
+                            <h2 class="step-title">Topologia &amp; Localizações (Sites)</h2>
+                            <p class="step-description">
+                                Indique onde está localizada a sede central da sua empresa e a quantidade de filiais ou pontos remotos que deseja interligar na malha privada L3.
+                            </p>
+                        </div>
+
+                        <!-- 1.1 Sede Principal -->
+                        <div class="config-block uk-margin-medium-top">
+                            <label class="config-label" for="headquarters-select">
+                                <span class="label-title">1.1 Sede / Ponto Central da Operação</span>
+                                <span class="label-hint">Localização onde reside o núcleo da equipa ou os servidores principais</span>
+                            </label>
+                            <select id="headquarters-select" class="uk-select dark-select" 
+                                    [ngModel]="headquarters()" 
+                                    (ngModelChange)="headquarters.set($event)">
+                                <option *ngFor="let opt of headquartersOptions" [value]="opt.id">
+                                    {{ opt.name }}
+                                </option>
+                            </select>
+
+                            <div *ngIf="headquarters() === 'outro'" class="uk-margin-small-top">
+                                <input type="text" class="uk-input dark-input" 
+                                       placeholder="Especifique a localização da sede (ex: Huambo, Lobito, Soyo...)" 
+                                       [ngModel]="headquartersCustom()" 
+                                       (ngModelChange)="headquartersCustom.set($event)">
+                            </div>
+                        </div>
+
+                        <!-- 1.2 Quantidade de Filiais -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label uk-flex uk-flex-between uk-flex-middle">
+                                <div>
+                                    <span class="label-title">1.2 Filiais &amp; Pontos Remotos</span>
+                                    <span class="label-hint">Quantos escritórios, lojas, estaleiros ou armazéns precisa de ligar à sede?</span>
+                                </div>
+                                <div class="counter-display">
+                                    <span class="counter-number">{{ branchesCount() }}</span>
+                                    <span class="counter-unit">{{ branchesCount() === 1 ? 'filial' : 'filiais' }}</span>
+                                </div>
+                            </div>
+
+                            <div class="slider-wrapper uk-margin-small-top">
+                                <input type="range" class="dark-range" min="0" max="40" step="1" 
+                                       [ngModel]="branchesCount()" 
+                                       (ngModelChange)="branchesCount.set(+$event)">
+                                <div class="range-stepper-buttons uk-margin-small-top uk-flex uk-flex-between uk-flex-middle">
+                                    <div class="stepper-quick-pills">
+                                        <button type="button" class="quick-pill" [class.is-selected]="branchesCount() === 1" (click)="branchesCount.set(1)">1 Filial</button>
+                                        <button type="button" class="quick-pill" [class.is-selected]="branchesCount() === 3" (click)="branchesCount.set(3)">3 Filiais</button>
+                                        <button type="button" class="quick-pill" [class.is-selected]="branchesCount() === 5" (click)="branchesCount.set(5)">5 Filiais</button>
+                                        <button type="button" class="quick-pill" [class.is-selected]="branchesCount() === 10" (click)="branchesCount.set(10)">10 Filiais</button>
+                                        <button type="button" class="quick-pill" [class.is-selected]="branchesCount() === 20" (click)="branchesCount.set(20)">20+ Filiais</button>
+                                    </div>
+                                    <div class="stepper-plus-minus">
+                                        <button type="button" class="btn-step" (click)="adjustBranches(-1)" [disabled]="branchesCount() <= 0" aria-label="Diminuir filiais">-</button>
+                                        <button type="button" class="btn-step" (click)="adjustBranches(1)" aria-label="Aumentar filiais">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1.3 Abrangência Geográfica -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label">
+                                <span class="label-title">1.3 Abrangência Geográfica das Filiais</span>
+                                <span class="label-hint">Selecione todas as regiões onde a sua empresa possui presença física</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-3@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let opt of coverageOptions">
+                                    <div class="selectable-card" 
+                                         [class.is-selected]="isCoverageSelected(opt.id)"
+                                         (click)="toggleCoverage(opt.id)">
+                                        <div class="card-check">
+                                            <span uk-icon="check" *ngIf="isCoverageSelected(opt.id)"></span>
+                                        </div>
+                                        <h4 class="card-item-title">{{ opt.label }}</h4>
+                                        <p class="card-item-desc">{{ opt.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1.4 Destinos Core & IXP -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label">
+                                <span class="label-title">1.4 Destinos Core &amp; Infraestrutura Crítica</span>
+                                <span class="label-hint">A que destinos os utilizadores e filiais precisam de aceder diretamente?</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-2@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let opt of coreDestinationOptions">
+                                    <div class="selectable-card" 
+                                         [class.is-selected]="isDestinationSelected(opt.id)"
+                                         (click)="toggleCoreDestination(opt.id)">
+                                        <div class="card-header-row uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="card-icon" [attr.uk-icon]="'icon: ' + opt.icon"></span>
+                                            <span class="card-badge" *ngIf="opt.badge">{{ opt.badge }}</span>
+                                            <div class="card-check">
+                                                <span uk-icon="check" *ngIf="isDestinationSelected(opt.id)"></span>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-item-title uk-margin-small-top">{{ opt.name }}</h4>
+                                        <p class="card-item-desc">{{ opt.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botão Próximo -->
+                        <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                            <span class="step-summary-hint">
+                                Total de locais a ligar: <strong>{{ totalSitesCount() }}</strong> (1 Sede + {{ branchesCount() }} {{ branchesCount() === 1 ? 'filial' : 'filiais' }})
+                            </span>
+                            <button type="button" class="uk-button uk-border-pill botao-verde" (click)="nextStep()">
+                                Avançar para Conectividade <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ==============================================
+                         PASSO 2: CONECTIVIDADE & ENVOLVENTES TÉCNICAS
+                         ============================================== -->
+                    <div class="step-card uk-card uk-card-body configurator-card" *ngIf="currentStep() === 2">
+                        <div class="step-header">
+                            <span class="step-badge">PASSO 2 DE 5</span>
+                            <h2 class="step-title">Conectividade &amp; Envolventes Técnicas</h2>
+                            <p class="step-description">
+                                A SPACEALL opera em Overlay L3 com independência de operadora. Indique que provedores já existem nos seus locais e que nível de disponibilidade a operação exige.
+                            </p>
+                        </div>
+
+                        <!-- 2.1 Operadoras / Links Atuais -->
+                        <div class="config-block uk-margin-medium-top">
+                            <div class="config-label">
+                                <span class="label-title">2.1 Operadoras &amp; Conexões Atuais (Overlay Multi-Carrier)</span>
+                                <span class="label-hint">Marque todos os operadores com contrato ativo nas filiais e sede (a rede unirá todos)</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let carrier of carrierOptions">
+                                    <div class="carrier-pill-card" 
+                                         [class.is-selected]="isCarrierSelected(carrier.id)"
+                                         (click)="toggleCarrier(carrier.id)">
+                                        <div class="carrier-check">
+                                            <span uk-icon="check" *ngIf="isCarrierSelected(carrier.id)"></span>
+                                        </div>
+                                        <span class="carrier-name">{{ carrier.name }}</span>
+                                        <span class="carrier-type">{{ carrier.type }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2.2 Perfil de Tráfego Crítico -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label">
+                                <span class="label-title">2.2 Aplicações &amp; Perfil de Tráfego Crítico</span>
+                                <span class="label-hint">Quais as cargas de trabalho que exigem prioridade de tráfego (QoS) na sua malha privada?</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-2@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let profile of trafficProfileOptions">
+                                    <div class="selectable-card" 
+                                         [class.is-selected]="isTrafficProfileSelected(profile.id)"
+                                         (click)="toggleTrafficProfile(profile.id)">
+                                        <div class="card-header-row uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="card-icon" [attr.uk-icon]="'icon: ' + profile.icon"></span>
+                                            <div class="card-check">
+                                                <span uk-icon="check" *ngIf="isTrafficProfileSelected(profile.id)"></span>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-item-title uk-margin-small-top">{{ profile.name }}</h4>
+                                        <p class="card-item-desc">{{ profile.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2.3 Nível de Redundância e Latência -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label">
+                                <span class="label-title">2.3 Nível de Redundância &amp; Encaminhamento</span>
+                                <span class="label-hint">Selecione a política de tolerância a falhas para a sua rede corporativa</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-3@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let red of redundancyOptions">
+                                    <div class="selectable-card radio-style" 
+                                         [class.is-selected]="redundancyLevel() === red.id"
+                                         (click)="redundancyLevel.set(red.id)">
+                                        <div class="card-header-row uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="card-badge">{{ red.badge }}</span>
+                                            <div class="radio-indicator">
+                                                <span class="radio-dot" *ngIf="redundancyLevel() === red.id"></span>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-item-title uk-margin-small-top">{{ red.name }}</h4>
+                                        <p class="card-item-desc">{{ red.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ações do Passo 2 -->
+                        <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                            <button type="button" class="uk-button uk-button-default uk-border-pill btn-back" (click)="prevStep()">
+                                <span uk-icon="arrow-left" class="uk-margin-small-right"></span> Voltar
+                            </button>
+                            <button type="button" class="uk-button uk-border-pill botao-verde" (click)="nextStep()">
+                                Avançar para Serviços VAS <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ==============================================
+                         PASSO 3: SERVIÇOS COMPLEMENTARES (VAS)
+                         ============================================== -->
+                    <div class="step-card uk-card uk-card-body configurator-card" *ngIf="currentStep() === 3">
+                        <div class="step-header">
+                            <span class="step-badge">PASSO 3 DE 5</span>
+                            <h2 class="step-title">Serviços Complementares de Valor Acrescentado (VAS)</h2>
+                            <p class="step-description">
+                                Enriqueça a sua malha L3 com proteções Zero-Trust, rotas soberanas de Disaster Recovery e armazenamento remoto em Angola.
+                            </p>
+                        </div>
+
+                        <!-- 3.1 AngolanVPN / ZTNA -->
+                        <div class="vas-block uk-margin-medium-top" [class.is-active]="ztnaEnabled()">
+                            <div class="vas-header uk-flex uk-flex-between uk-flex-middle">
+                                <div class="uk-flex uk-flex-middle">
+                                    <span class="vas-icon" uk-icon="icon: lock; ratio: 1.3"></span>
+                                    <div class="uk-margin-small-left">
+                                        <h3 class="vas-title">Acesso Remoto Zero-Trust (ZTNA) / AngolanVPN</h3>
+                                        <p class="vas-subtitle">Acesso seguro para colaboradores remotos, comerciais e executivos com IP Angolano Soberano.</p>
+                                    </div>
+                                </div>
+                                <label class="switch-toggle" aria-label="Ativar ZTNA">
+                                    <input type="checkbox" [ngModel]="ztnaEnabled()" (ngModelChange)="ztnaEnabled.set($event)">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+
+                            <div class="vas-details uk-margin-small-top" *ngIf="ztnaEnabled()">
+                                <div class="uk-flex uk-flex-between uk-flex-middle">
+                                    <span class="label-hint">Quantidade de Utilizadores Concorrentes (Licenciamento Mensal):</span>
+                                    <div class="counter-display small">
+                                        <span class="counter-number">{{ ztnaUsersCount() }}</span>
+                                        <span class="counter-unit">utilizadores</span>
+                                    </div>
+                                </div>
+                                <div class="uk-margin-small-top uk-flex uk-flex-middle">
+                                    <input type="range" class="dark-range" min="5" max="300" step="5" 
+                                           [ngModel]="ztnaUsersCount()" 
+                                           (ngModelChange)="ztnaUsersCount.set(+$event)">
+                                    <div class="stepper-plus-minus uk-margin-small-left">
+                                        <button type="button" class="btn-step" (click)="adjustZtnaUsers(-5)">-</button>
+                                        <button type="button" class="btn-step" (click)="adjustZtnaUsers(5)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3.2 Túneis Diretos para DR -->
+                        <div class="vas-block uk-margin-medium-top" [class.is-active]="drTunnelsEnabled()">
+                            <div class="vas-header uk-flex uk-flex-between uk-flex-middle">
+                                <div class="uk-flex uk-flex-middle">
+                                    <span class="vas-icon" uk-icon="icon: refresh; ratio: 1.3"></span>
+                                    <div class="uk-margin-small-left">
+                                        <h3 class="vas-title">Túneis Privados para Disaster Recovery (DR)</h3>
+                                        <p class="vas-subtitle">Trânsito L3 otimizado para motores de replicação de máquinas virtuais (Veeam, Acronis, Commvault).</p>
+                                    </div>
+                                </div>
+                                <label class="switch-toggle" aria-label="Ativar Túneis DR">
+                                    <input type="checkbox" [ngModel]="drTunnelsEnabled()" (ngModelChange)="drTunnelsEnabled.set($event)">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 3.3 Backup Site-to-Cloud -->
+                        <div class="vas-block uk-margin-medium-top" [class.is-active]="backupCloudEnabled()">
+                            <div class="vas-header uk-flex uk-flex-between uk-flex-middle">
+                                <div class="uk-flex uk-flex-middle">
+                                    <span class="vas-icon" uk-icon="icon: cloud-upload; ratio: 1.3"></span>
+                                    <div class="uk-margin-small-left">
+                                        <h3 class="vas-title">Backup Automatizado Site-to-Cloud</h3>
+                                        <p class="vas-subtitle">Envio programado e encriptado de cópias de segurança para repositório central na Clouds2Africa.</p>
+                                    </div>
+                                </div>
+                                <label class="switch-toggle" aria-label="Ativar Backup Site-to-Cloud">
+                                    <input type="checkbox" [ngModel]="backupCloudEnabled()" (ngModelChange)="backupCloudEnabled.set($event)">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 3.4 Armazenamento Remoto Soberano (S3) -->
+                        <div class="vas-block uk-margin-medium-top" [class.is-active]="sovereignStorageEnabled()">
+                            <div class="vas-header uk-flex uk-flex-between uk-flex-middle">
+                                <div class="uk-flex uk-flex-middle">
+                                    <span class="vas-icon" uk-icon="icon: database; ratio: 1.3"></span>
+                                    <div class="uk-margin-small-left">
+                                        <h3 class="vas-title">Armazenamento Remoto Soberano (S3 Object / Block Storage)</h3>
+                                        <p class="vas-subtitle">Volumes remotos de alta performance alojados em Angola com compatibilidade total Amazon S3 e MinIO.</p>
+                                    </div>
+                                </div>
+                                <label class="switch-toggle" aria-label="Ativar Armazenamento Soberano">
+                                    <input type="checkbox" [ngModel]="sovereignStorageEnabled()" (ngModelChange)="sovereignStorageEnabled.set($event)">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+
+                            <div class="vas-details uk-margin-small-top" *ngIf="sovereignStorageEnabled()">
+                                <span class="label-hint">Capacidade de Armazenamento Inicial Estimada:</span>
+                                <div class="uk-grid-small uk-child-width-1-3 uk-margin-small-top" uk-grid>
+                                    <div>
+                                        <button type="button" class="storage-tier-btn" 
+                                                [class.is-selected]="storageCapacity() === '1tb_5tb'"
+                                                (click)="storageCapacity.set('1tb_5tb')">
+                                            1 TB a 5 TB
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="storage-tier-btn" 
+                                                [class.is-selected]="storageCapacity() === '5tb_20tb'"
+                                                (click)="storageCapacity.set('5tb_20tb')">
+                                            5 TB a 20 TB
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="storage-tier-btn" 
+                                                [class.is-selected]="storageCapacity() === '20tb_plus'"
+                                                (click)="storageCapacity.set('20tb_plus')">
+                                            20 TB ou Superior
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ações do Passo 3 -->
+                        <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                            <button type="button" class="uk-button uk-button-default uk-border-pill btn-back" (click)="prevStep()">
+                                <span uk-icon="arrow-left" class="uk-margin-small-right"></span> Voltar
+                            </button>
+                            <button type="button" class="uk-button uk-border-pill botao-verde" (click)="nextStep()">
+                                Avançar para Hardware Edge <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ==============================================
+                         PASSO 4: HARDWARE EDGE (APPLIANCES)
+                         ============================================== -->
+                    <div class="step-card uk-card uk-card-body configurator-card" *ngIf="currentStep() === 4">
+                        <div class="step-header">
+                            <span class="step-badge">PASSO 4 DE 5</span>
+                            <h2 class="step-title">Hardware Edge &amp; Modelo de Fornecimento</h2>
+                            <p class="step-description">
+                                Escolha os equipamentos físicos pré-configurados para os seus locais ou opte por gateways virtuais em software.
+                            </p>
+                        </div>
+
+                        <!-- 4.1 Seleção do Appliance -->
+                        <div class="config-block uk-margin-medium-top">
+                            <div class="config-label">
+                                <span class="label-title">4.1 Formato do Gateway / Appliance de Rede</span>
+                                <span class="label-hint">Equipamento pré-configurado pela engenharia SPACEALL com Zero-Touch Provisioning</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-3@m uk-margin-small-top" uk-grid>
+                                <div *ngFor="let app of applianceOptions">
+                                    <div class="appliance-card" 
+                                         [class.is-selected]="applianceModel() === app.id"
+                                         (click)="applianceModel.set(app.id)">
+                                        <div class="appliance-header uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="appliance-icon" [attr.uk-icon]="'icon: ' + app.icon"></span>
+                                            <div class="radio-indicator">
+                                                <span class="radio-dot" *ngIf="applianceModel() === app.id"></span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div *ngIf="app.image" class="appliance-thumb uk-margin-small-top uk-margin-small-bottom">
+                                            <img [src]="app.image" alt="Ilustração do equipamento" style="max-height: 80px; width: auto;">
+                                        </div>
+
+                                        <h4 class="appliance-title">{{ app.name }}</h4>
+                                        <p class="appliance-sub">{{ app.subtitle }}</p>
+                                        
+                                        <ul class="appliance-specs uk-list">
+                                            <li *ngFor="let spec of app.specs">
+                                                <span uk-icon="icon: check; ratio: 0.8" class="spec-check"></span> {{ spec }}
+                                            </li>
+                                        </ul>
+
+                                        <div class="appliance-footer-tag">
+                                            {{ app.recommendedFor }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4.2 Modalidade Comercial (OpEx vs CapEx) -->
+                        <div class="config-block uk-margin-large-top">
+                            <div class="config-label">
+                                <span class="label-title">4.2 Modalidade de Contratação do Hardware</span>
+                                <span class="label-hint">Faturação flexível adaptada à política financeira e orçamental da sua organização</span>
+                            </div>
+                            <div class="uk-grid-small uk-child-width-1-2@m uk-margin-small-top" uk-grid>
+                                <div>
+                                    <div class="modalidade-card" 
+                                         [class.is-selected]="contractModalidade() === 'opex_leasing'"
+                                         (click)="contractModalidade.set('opex_leasing')">
+                                        <div class="uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="modalidade-badge opex">OpEx Mensal</span>
+                                            <div class="radio-indicator">
+                                                <span class="radio-dot" *ngIf="contractModalidade() === 'opex_leasing'"></span>
+                                            </div>
+                                        </div>
+                                        <h4 class="modalidade-title uk-margin-small-top">Leasing / Aluguer Mensal (OpEx)</h4>
+                                        <p class="modalidade-desc">
+                                            Subscrição mensal com garantia vitalícia de substituição imediata (*hardware swap*), manutenção incluída e sem despesas de capital iniciais.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="modalidade-card" 
+                                         [class.is-selected]="contractModalidade() === 'capex_aquisicao'"
+                                         (click)="contractModalidade.set('capex_aquisicao')">
+                                        <div class="uk-flex uk-flex-between uk-flex-middle">
+                                            <span class="modalidade-badge capex">CapEx Direto</span>
+                                            <div class="radio-indicator">
+                                                <span class="radio-dot" *ngIf="contractModalidade() === 'capex_aquisicao'"></span>
+                                            </div>
+                                        </div>
+                                        <h4 class="modalidade-title uk-margin-small-top">Aquisição Direta dos Equipamentos (CapEx)</h4>
+                                        <p class="modalidade-desc">
+                                            Compra dos aparelhos de rede para integração no ativo imobilizado da empresa, mantendo apenas a taxa de serviço ENaaS mensal em Kwanzas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ações do Passo 4 -->
+                        <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                            <button type="button" class="uk-button uk-button-default uk-border-pill btn-back" (click)="prevStep()">
+                                <span uk-icon="arrow-left" class="uk-margin-small-right"></span> Voltar
+                            </button>
+                            <button type="button" class="uk-button uk-border-pill botao-verde" (click)="nextStep()">
+                                Avançar para Dados da Empresa <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ==============================================
+                         PASSO 5: DADOS DA EMPRESA & SUBMISSÃO
+                         ============================================== -->
+                    <div class="step-card uk-card uk-card-body configurator-card" *ngIf="currentStep() === 5">
+                        <div class="step-header">
+                            <span class="step-badge">PASSO 5 DE 5</span>
+                            <h2 class="step-title">Dados da Empresa &amp; Submissão da Proposta</h2>
+                            <p class="step-description">
+                                Preencha os dados institucionais para que a nossa equipa de engenharia possa calcular o dimensionamento exato e emitir a proposta técnica e financeira.
+                            </p>
+                        </div>
+
+                        <form (submit)="submitDesign($event)" class="company-data-form uk-margin-medium-top">
+                            <div class="uk-grid-small uk-child-width-1-2@m" uk-grid>
+                                <div>
+                                    <label class="form-label" for="company-name">Nome da Empresa / Organização *</label>
+                                    <input id="company-name" type="text" class="uk-input dark-input" 
+                                           placeholder="Ex: Grupo Empresarial ABC, Lda" 
+                                           [ngModel]="companyName()" 
+                                           (ngModelChange)="companyName.set($event)" 
+                                           name="companyName" required>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="company-nif">NIF da Empresa (Opcional)</label>
+                                    <input id="company-nif" type="text" class="uk-input dark-input" 
+                                           placeholder="Ex: 5401234567" 
+                                           [ngModel]="nif()" 
+                                           (ngModelChange)="nif.set($event)" 
+                                           name="nif">
+                                </div>
+                            </div>
+
+                            <div class="uk-grid-small uk-child-width-1-2@m uk-margin-small-top" uk-grid>
+                                <div>
+                                    <label class="form-label" for="contact-name">Nome do Responsável *</label>
+                                    <input id="contact-name" type="text" class="uk-input dark-input" 
+                                           placeholder="Ex: Eng. Manuel Silva" 
+                                           [ngModel]="contactName()" 
+                                           (ngModelChange)="contactName.set($event)" 
+                                           name="contactName" required>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="contact-role">Cargo / Função *</label>
+                                    <input id="contact-role" type="text" class="uk-input dark-input" 
+                                           placeholder="Ex: Diretor de TI, CTO, Gestor de Infraestruturas" 
+                                           [ngModel]="contactRole()" 
+                                           (ngModelChange)="contactRole.set($event)" 
+                                           name="contactRole" required>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid-small uk-child-width-1-2@m uk-margin-small-top" uk-grid>
+                                <div>
+                                    <label class="form-label" for="contact-email">E-mail Corporativo *</label>
+                                    <input id="contact-email" type="email" class="uk-input dark-input" 
+                                           placeholder="Ex: ti@empresa.co.ao" 
+                                           [ngModel]="corporateEmail()" 
+                                           (ngModelChange)="corporateEmail.set($event)" 
+                                           name="corporateEmail" required>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="contact-phone">WhatsApp / Telefone para Contacto *</label>
+                                    <input id="contact-phone" type="tel" class="uk-input dark-input" 
+                                           placeholder="Ex: +244 923 000 000" 
+                                           [ngModel]="phoneWhatsapp()" 
+                                           (ngModelChange)="phoneWhatsapp.set($event)" 
+                                           name="phoneWhatsapp" required>
+                                </div>
+                            </div>
+
+                            <div class="uk-margin-small-top">
+                                <label class="form-label" for="observations">Observações ou Requisitos Adicionais (Opcional)</label>
+                                <textarea id="observations" rows="3" class="uk-textarea dark-textarea" 
+                                          placeholder="Ex: Planeamos abrir mais 2 filiais no Bengo no próximo trimestre; precisamos de ligar o core bancário diretamente ao Datacenter Sangano..." 
+                                          [ngModel]="observations()" 
+                                          (ngModelChange)="observations.set($event)" 
+                                          name="observations"></textarea>
+                            </div>
+
+                            <!-- BANNER DE DESTAQUE: FATURAÇÃO EM KWANZAS -->
+                            <div class="aoa-sovereignty-badge uk-margin-medium-top uk-flex uk-flex-middle">
+                                <span class="badge-icon" uk-icon="icon: check; ratio: 1.4"></span>
+                                <div class="badge-content">
+                                    <h4 class="badge-title">Garantia de Faturação Soberana em Kwanzas (AOA)</h4>
+                                    <p class="badge-text">
+                                        Todos os contratos, serviços e mensalidades SPACEALL são faturados localmente em AOA com IVA dedutível, protegendo o orçamento da sua organização contra oscilações cambiais e sem necessidade de divisas externas.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Envio -->
+                            <div class="step-actions uk-margin-large-top uk-flex uk-flex-between uk-flex-middle">
+                                <button type="button" class="uk-button uk-button-default uk-border-pill btn-back" (click)="prevStep()" [disabled]="isSubmitting()">
+                                    <span uk-icon="arrow-left" class="uk-margin-small-right"></span> Voltar
+                                </button>
+                                <button type="submit" class="uk-button uk-border-pill botao-verde submit-cta-btn" [disabled]="isSubmitting() || !isStep5Valid()">
+                                    <span *ngIf="!isSubmitting()">
+                                        Solicitar Proposta &amp; Desenho Técnico <span uk-icon="arrow-right" class="uk-margin-small-left"></span>
+                                    </span>
+                                    <span *ngIf="isSubmitting()">
+                                        <span uk-spinner="ratio: 0.8" class="uk-margin-small-right"></span> A processar topologia...
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: LIVE SUMMARY SIDEBAR (STICKY ON DESKTOP) -->
+            <div class="uk-width-1-1 uk-width-1-3@m">
+                <aside class="live-summary-card" uk-sticky="offset: 90; media: @m; bottom: #configurator-flow">
+                    <div class="summary-header uk-flex uk-flex-between uk-flex-middle">
+                        <h3 class="summary-title">Resumo da Rede</h3>
+                        <span class="live-indicator"><span class="pulse-dot"></span> Em Tempo Real</span>
+                    </div>
+
+                    <!-- Métricas Chave -->
+                    <div class="summary-kpi-grid uk-grid-collapse uk-child-width-1-2" uk-grid>
+                        <div class="kpi-box">
+                            <span class="kpi-number">{{ totalSitesCount() }}</span>
+                            <span class="kpi-label">Locais Totais</span>
+                        </div>
+                        <div class="kpi-box">
+                            <span class="kpi-number">{{ carriers().length }}</span>
+                            <span class="kpi-label">Operadoras</span>
+                        </div>
+                    </div>
+
+                    <!-- Lista de Configurações Ativas -->
+                    <div class="summary-details-list">
+                        
+                        <div class="summary-item">
+                            <div class="summary-item-header">
+                                <span class="item-tag">SEDE &amp; FILIAIS</span>
+                                <button type="button" class="btn-edit-step" (click)="goToStep(1)">Editar</button>
+                            </div>
+                            <p class="summary-item-val"><strong>Sede:</strong> {{ headquartersLabel() }}</p>
+                            <p class="summary-item-val"><strong>Filiais:</strong> {{ branchesCount() }} ({{ selectedCoveragesLabel() }})</p>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-item-header">
+                                <span class="item-tag">DESTINOS CORE</span>
+                                <button type="button" class="btn-edit-step" (click)="goToStep(1)">Editar</button>
+                            </div>
+                            <p class="summary-item-val">{{ selectedDestinationsLabel() }}</p>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-item-header">
+                                <span class="item-tag">CONECTIVIDADE</span>
+                                <button type="button" class="btn-edit-step" (click)="goToStep(2)">Editar</button>
+                            </div>
+                            <p class="summary-item-val"><strong>Links:</strong> {{ selectedCarriersLabel() }}</p>
+                            <p class="summary-item-val"><strong>Tolerância:</strong> {{ selectedRedundancyLabel() }}</p>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-item-header">
+                                <span class="item-tag">SERVIÇOS VAS ({{ activeVasCount() }})</span>
+                                <button type="button" class="btn-edit-step" (click)="goToStep(3)">Editar</button>
+                            </div>
+                            <ul class="summary-vas-tags">
+                                <li *ngIf="ztnaEnabled()" class="vas-tag">ZTNA ({{ ztnaUsersCount() }} users)</li>
+                                <li *ngIf="drTunnelsEnabled()" class="vas-tag">Túneis DR</li>
+                                <li *ngIf="backupCloudEnabled()" class="vas-tag">Backup Cloud</li>
+                                <li *ngIf="sovereignStorageEnabled()" class="vas-tag">Storage S3 ({{ storageCapacity() }})</li>
+                                <li *ngIf="activeVasCount() === 0" class="vas-tag-none">Nenhum serviço ativo</li>
+                            </ul>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-item-header">
+                                <span class="item-tag">HARDWARE EDGE</span>
+                                <button type="button" class="btn-edit-step" (click)="goToStep(4)">Editar</button>
+                            </div>
+                            <p class="summary-item-val"><strong>Modelo:</strong> {{ selectedApplianceLabel() }}</p>
+                            <p class="summary-item-val"><strong>Modalidade:</strong> {{ selectedModalidadeLabel() }}</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Faturação em AOA Badge -->
+                    <div class="sidebar-aoa-pill">
+                        <span uk-icon="icon: tag; ratio: 0.9" class="uk-margin-small-right"></span> Faturação em Kwanzas (AOA)
+                    </div>
+
+                    <!-- Ação Rápida no Sidebar -->
+                    <div class="sidebar-action uk-margin-medium-top" *ngIf="!submissionSuccess()">
+                        <button *ngIf="currentStep() < 5" type="button" class="uk-button uk-border-pill botao-verde uk-width-1-1" (click)="nextStep()">
+                            Avançar Passo {{ currentStep() + 1 }} <span uk-icon="arrow-right"></span>
+                        </button>
+                        <button *ngIf="currentStep() === 5" type="button" class="uk-button uk-border-pill botao-verde uk-width-1-1" (click)="submitDesign($event)" [disabled]="isSubmitting() || !isStep5Valid()">
+                            <span *ngIf="!isSubmitting()">Submeter Desenho <span uk-icon="check"></span></span>
+                            <span *ngIf="isSubmitting()"><span uk-spinner="ratio: 0.8"></span> A enviar...</span>
+                        </button>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<app-rodape></app-rodape>

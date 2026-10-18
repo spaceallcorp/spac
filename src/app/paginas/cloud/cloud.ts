@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 import { Menu } from '../../layout/menu/menu';
 import { Rodape } from '../../layout/rodape/rodape';
@@ -7,7 +8,7 @@ import { Form } from '../../layout/form/form';
 
 @Component({
   selector: 'app-cloud',
-  imports: [ Menu, Rodape, Form ],
+  imports: [Menu, Rodape, Form, RouterLink],
   templateUrl: './cloud.html',
   styleUrl: './cloud.css'
 })
@@ -18,18 +19,18 @@ export class Cloud {
     private title: Title
   ) {
     /* ✅ TITLE */
-    this.title.setTitle('SPACEALL | Nuvem Dedicada para IoT e Redes Privadas (LoRaWAN, WiFi HaLow, Bluetooth e AirLink)');
+    this.title.setTitle('SPACEALL | Cloud e Edge para redes privadas empresariais');
 
     /* ✅ META DESCRIPTION */
     this.meta.addTag({
       name: 'description',
-      content: 'Nuvem dedicada da SPACEALL para Internet das Coisas e redes privadas corporativas. Suporta LoRaWAN, WiFi HaLow, Bluetooth e AirLink, garantindo conectividade segura, escalável e integrada Edge-to-Cloud.'
+      content: 'Interligue ambientes cloud e nós SPACEALL através de caminhos privados, com uma arquitectura dimensionada para a sua operação.'
     });
 
     /* ✅ KEYWORDS */
     this.meta.addTag({
       name: 'keywords',
-      content: 'IoT, Nuvem IoT, LoRaWAN, WiFi HaLow, Bluetooth, AirLink, redes privadas, conectividade empresarial, Edge Cloud, SPACEALL Angola'
+      content: 'SPACEALL Cloud, Edge, redes privadas, conectividade empresarial, Angola'
     });
 
     /* ✅ ROBOTS */
@@ -47,12 +48,12 @@ export class Cloud {
     /* ✅ OPEN GRAPH */
     this.meta.addTag({
       property: 'og:title',
-      content: 'SPACEALL | Nuvem Dedicada para IoT e Redes Privadas (LoRaWAN, WiFi HaLow, Bluetooth e AirLink)'
+      content: 'SPACEALL | Cloud e Edge para redes privadas empresariais'
     });
 
     this.meta.addTag({
       property: 'og:description',
-      content: 'Plataforma em nuvem da SPACEALL para IoT e redes privadas, ideal para empresas que precisam de conectividade segura e escalável com LoRaWAN, HaLow, Bluetooth e AirLink.'
+      content: 'Combine ambientes cloud e nós SPACEALL em caminhos privados, conforme os requisitos da sua empresa.'
     });
 
     this.meta.addTag({
@@ -78,12 +79,12 @@ export class Cloud {
 
     this.meta.addTag({
       name: 'twitter:title',
-      content: 'SPACEALL | Nuvem Dedicada para IoT e Redes Privadas'
+      content: 'SPACEALL | Cloud e Edge para redes privadas empresariais'
     });
 
     this.meta.addTag({
       name: 'twitter:description',
-      content: 'Conectividade segura e escalável para IoT e redes privadas corporativas com LoRaWAN, WiFi HaLow, Bluetooth e AirLink.'
+      content: 'Integre serviços cloud e nós SPACEALL através da rede privada da sua organização.'
     });
 
     this.meta.addTag({

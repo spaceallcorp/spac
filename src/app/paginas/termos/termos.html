@@ -1,130 +1,305 @@
 <app-menu></app-menu>
 
-<div class=" uk-background-secondary uk-text-left ">
-    <div class="uk-padding uk-container">
-        <p class="texto-fundo  ">Legal
-        </p>
-
-        <h1  class="uk-margin-medium-bottom" style="font-family: inherit !important; font-weight: 500; color:  #fff !important ">
-            Termos e Condições</h1>
-        <h3 style="font-family: inherit;"> Nos preocupamos com a sua privacidade e estamos comprometidos em proteger as suas informações pessoais. Esta política de privacidade descreve como coletamos, usamos e protegemos suas informações quando você utiliza nossos serviços.
-        </h3>
-    </div>
-</div>
-
-
-<div class="uk-container uk-margin-large-top uk-margin-large-bottom ">
-
- 
-    <header>
-        <h1>Termos e Condições Gerais de Serviço da Spaceall</h1>
-        <p><strong>Versão:</strong> 1.0</p>
-        <p><strong>Data de Vigência:</strong> 17 de Novembro de 2025</p>
+<main class="legal-page">
+    <!-- Hero Banner -->
+    <header class="page-banner uk-text-left">
+        <div class="uk-padding-large uk-container">
+            <p class="texto-fundo">DOCUMENTAÇÃO LEGAL • TERMOS DE SERVIÇO</p>
+            <h1 class="hero-title uk-margin-small-top uk-margin-small-bottom">
+                Termos e Condições Gerais de Serviço
+            </h1>
+            <p class="uk-text-lead hero-subtitle">
+                Estes termos enquadram os serviços empresariais SPACEALL. O âmbito, as condições técnicas e os valores
+                aplicáveis são definidos na proposta e nos documentos acordados com cada cliente.
+            </p>
+            <div class="legal-meta-pills uk-margin-medium-top">
+                <span class="meta-pill">
+                    <span uk-icon="icon: tag; ratio: 0.85" aria-hidden="true"></span>
+                    <strong>Versão:</strong> 1.0
+                </span>
+                <span class="meta-pill">
+                    <span uk-icon="icon: calendar; ratio: 0.85" aria-hidden="true"></span>
+                    <strong>Data de Vigência:</strong> 17 de Novembro de 2025
+                </span>
+            </div>
+        </div>
     </header>
 
-    <div class="definition-box">
-        <p>Estes Termos e Condições Gerais de Serviço (doravante “Termos”) regem a prestação de serviços de conectividade inteligente e acesso à plataforma de gestão de dados (a “Plataforma”) pela Spaceall (doravante “Spaceall”) ao cliente empresarial (doravante “Cliente”).</p>
-    </div>
+    <section class="uk-container uk-section">
+        <!-- Context / Definition Box -->
+        <div class="context-panel uk-padding-large uk-margin-large-bottom">
+            <span class="section-kicker">ENQUADRAMENTO CONTRATUAL</span>
+            <p class="context-text context-highlight uk-margin-small-top uk-margin-remove-bottom">
+                Estes Termos e Condições Gerais de Serviço (doravante <strong>“Termos”</strong>) regem a prestação de
+                serviços empresariais da <strong>SPACEALL</strong>, incluindo
+                <a class="inline-green-anchor" routerLink="/ligacoes-privadas">SPACEALL Private Network</a>,
+                <a class="inline-green-anchor" routerLink="/desenhe-sua-ligacao">SPACEALL ENaaS</a>,
+                <a class="inline-green-anchor" routerLink="/angolanvpn">AngolanVPN</a> e
+                <strong>SPACEALL Edge Box</strong>, conforme a proposta aceite pelo cliente (doravante
+                <strong>“Cliente”</strong>).
+            </p>
+        </div>
 
-    <section id="gerais">
-        <h2>1. Disposições Gerais</h2>
-        <ol>
-            <li>Aceitação: A ativação de qualquer serviço de conectividade ou o acesso à Plataforma Spaceall implica a aceitação integral e sem reservas destes Termos.</li>
-            <li>Natureza B2B do Serviço: A Spaceall fornece serviços de rede Machine-to-Machine (M2M) e Internet of Things (IoT), utilizando tecnologia LoRaWAN e Wi-Fi HaLow. O serviço é destinado exclusivamente para aplicações empresariais (Logística, Agricultura, Segurança, etc.), com baixa taxa de dados (payloads) e longo alcance. Não se destina, nem pode ser usado, para comunicações de alta largura de banda (voz, vídeo ou navegação web tradicional) para consumo geral.</li>
-            <li>Documentos Vinculativos: Estes Termos são complementados pela Proposta Comercial, que detalha os preços, os equipamentos e o volume de dados contratado, e pelo Acordo de Nível de Serviço (SLA), que define os parâmetros de performance da rede.</li>
-        </ol>
+        <!-- Quick Anchor Navigation -->
+        <nav class="legal-toc uk-margin-large-bottom" aria-label="Índice de Cláusulas">
+            <span class="toc-label">Navegação Rápida:</span>
+            <div class="toc-links">
+                <a href="#gerais">1. Disposições Gerais</a>
+                <a href="#servico">2. Âmbito do Serviço</a>
+                <a href="#obrigacoes-cliente">3. Obrigações do Cliente</a>
+                <a href="#cobranca">4. Preços e Pagamento</a>
+                <a href="#dados">5. Propriedade e Dados</a>
+                <a href="#responsabilidade">6. Limitação de Responsabilidade</a>
+                <a href="#rescisao">7. Rescisão</a>
+                <a href="#contacto">8. Lei Aplicável e Foro</a>
+            </div>
+        </nav>
+
+        <!-- Legal Clauses Grid -->
+        <div class="legal-sections">
+            <article id="gerais" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 01</span>
+                    <h2 class="uk-card-title">1. Disposições Gerais</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Aceitação:</strong> A ativação de qualquer serviço de conectividade ou o acesso à
+                        Plataforma Spaceall implica a aceitação integral e sem reservas destes Termos.
+                    </li>
+                    <li>
+                        <strong>Natureza B2B do Serviço:</strong> A oferta SPACEALL destina-se a organizações e pode
+                        incluir redes privadas overlay, acesso Zero-Trust, Multi-homing BGP, nós ENaaS, acesso remoto
+                        AngolanVPN e Edge Box, nos limites definidos na proposta aceite.
+                    </li>
+                    <li>
+                        <strong>Documentos Vinculativos:</strong> Estes Termos são complementados pela Proposta
+                        Comercial, que detalha o serviço, os preços, o equipamento e os locais ou utilizadores
+                        abrangidos, e por eventual Acordo de Nível de Serviço (SLA).
+                    </li>
+                </ol>
+            </article>
+
+            <article id="servico" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 02</span>
+                    <h2 class="uk-card-title">2. Prestação e Âmbito do Serviço</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Âmbito:</strong> A SPACEALL disponibilizará os serviços e componentes de rede
+                        identificados na proposta aceite, que podem incluir ligações entre nós, filiais, datacenters,
+                        ambientes cloud e utilizadores.
+                    </li>
+                    <li>
+                        <strong>Activação:</strong> A activação depende da conformidade dos equipamentos, sistemas e
+                        ligações do Cliente com as especificações técnicas acordadas e do pagamento de taxas aplicáveis
+                        indicadas na proposta.
+                    </li>
+                    <li>
+                        <strong>Disponibilidade:</strong> A disponibilidade, os locais abrangidos e os parâmetros de
+                        desempenho dependem da solução contratada e das condições definidas na proposta e no SLA,
+                        quando aplicável.
+                    </li>
+                </ol>
+            </article>
+
+            <article id="obrigacoes-cliente" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 03</span>
+                    <h2 class="uk-card-title">3. Obrigações do Cliente</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Uso Adequado:</strong> O Cliente compromete-se a utilizar os serviços para os fins
+                        acordados e em conformidade com as leis aplicáveis em Angola.
+                    </li>
+                    <li>
+                        <strong>Equipamento e sistemas:</strong>
+                        <ul class="legal-sublist">
+                            <li>
+                                As responsabilidades pela aquisição, manutenção e configuração de dispositivos, nós,
+                                routers, agentes e SPACEALL Edge Box são definidas na proposta aceite.
+                            </li>
+                            <li>
+                                O Cliente deve assegurar que os seus equipamentos e sistemas cumprem os requisitos
+                                técnicos e regulamentos aplicáveis e não interferem indevidamente com a rede.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Dados de Acesso:</strong> O Cliente é responsável por manter a confidencialidade das
+                        credenciais de acesso à Plataforma, sendo responsável por toda a atividade ocorrida na sua
+                        conta.
+                    </li>
+                    <li>
+                        <strong>Indemnização:</strong> O Cliente concorda em indemnizar a Spaceall por quaisquer perdas
+                        ou danos resultantes do uso indevido do Serviço, incluindo, mas não se limitando, a ataques de
+                        negação de serviço ou sobrecarga intencional da rede.
+                    </li>
+                </ol>
+            </article>
+
+            <article id="cobranca" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 04</span>
+                    <h2 class="uk-card-title">4. Preços, Pagamento e Renovação</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Modelo Comercial:</strong> Os serviços podem ser facturados por nó ou filial ligada,
+                        licença por utilizador, equipamento adquirido ou em leasing, ou outra modalidade definida na
+                        Proposta Comercial. A referência indicativa de US$ 100–300 por nó/mês para ENaaS não constitui
+                        preço final nem oferta vinculativa; os valores e a facturação em <strong>AOA</strong> serão
+                        definidos na proposta aceite.
+                    </li>
+                    <li>
+                        <strong>Faturação:</strong> As facturas serão emitidas com a periodicidade acordada e pagas no
+                        prazo indicado na proposta comercial e na respectiva factura.
+                    </li>
+                    <li>
+                        <strong>Atraso no Pagamento (Incumprimento):</strong> O incumprimento dos prazos de pagamento
+                        confere à Spaceall o direito de:
+                        <ul class="legal-sublist">
+                            <li>Aplicar juros de mora à taxa legal.</li>
+                            <li>
+                                Suspender imediatamente o acesso do Cliente à Plataforma e a conectividade dos seus
+                                dispositivos, notificando o Cliente com 48 horas de antecedência.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Ajuste de Preço:</strong> A Spaceall reserva-se o direito de ajustar os preços mediante
+                        notificação prévia de 60 dias ao Cliente.
+                    </li>
+                </ol>
+            </article>
+
+            <article id="dados" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 05</span>
+                    <h2 class="uk-card-title">5. Propriedade Intelectual e Dados do Cliente</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Propriedade da Plataforma:</strong> Todo o software, interfaces, API, códigos,
+                        algoritmos e infraestrutura de rede são e permanecerão propriedade exclusiva da Spaceall ou dos
+                        seus licenciadores. O Cliente recebe apenas uma licença limitada, não-exclusiva e revogável
+                        para usar a Plataforma durante a vigência do contrato.
+                    </li>
+                    <li>
+                        <strong>Propriedade dos Dados do Cliente:</strong>
+                        <ul class="legal-sublist">
+                            <li>
+                                O Cliente mantém os direitos sobre os dados que introduz ou gera através dos serviços,
+                                sem prejuízo dos direitos de terceiros.
+                            </li>
+                            <li>
+                                O tratamento, a localização e as medidas de protecção aplicáveis aos dados são
+                                definidos nos documentos contratuais e na arquitectura do serviço contratado. Consulte
+                                também a nossa <a class="inline-green-anchor" routerLink="/politicas">Política de Privacidade</a>.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article id="responsabilidade" class="uk-card uk-card-default uk-card-body legal-card legal-card-critical">
+                <div class="clause-header">
+                    <span class="clause-badge clause-badge-critical">CLÁUSULA CRÍTICA • 06</span>
+                    <h2 class="uk-card-title">6. Limitação de Responsabilidade</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Indisponibilidade:</strong> A Spaceall não será responsável por falhas de conectividade
+                        que resultem de:
+                        <ul class="legal-sublist">
+                            <li>Interferência ou falha no equipamento do Cliente ou de terceiros.</li>
+                            <li>Eventos de Força Maior (incluindo desastres naturais, guerras, greves ou atos do governo).</li>
+                            <li>Manutenção de rede comunicada com antecedência, conforme o SLA.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Exclusão de Danos:</strong> Em nenhuma circunstância a Spaceall ou os seus fornecedores
+                        (ex: Milesight) serão responsáveis por quaisquer danos indiretos, incidentais, especiais,
+                        punitivos ou consequenciais (incluindo, mas não se limitando a, perda de lucros, interrupção de
+                        negócios, perda de dados) resultantes do uso ou incapacidade de usar o Serviço, mesmo que a
+                        Spaceall tenha sido avisada da possibilidade de tais danos.
+                    </li>
+                    <li>
+                        <strong>Limite Global:</strong> A responsabilidade total e máxima da Spaceall por qualquer
+                        causa relacionada ao Serviço será limitada ao montante total pago pelo Cliente nos seis (6)
+                        meses imediatamente anteriores ao evento que deu origem à reclamação.
+                    </li>
+                </ol>
+            </article>
+
+            <article id="rescisao" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 07</span>
+                    <h2 class="uk-card-title">7. Rescisão do Contrato</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Rescisão pelo Cliente:</strong> O Cliente pode rescindir o contrato mediante
+                        notificação prévia de 30 dias. Não serão devidos reembolsos pela porção não utilizada da
+                        subscrição paga, exceto se especificamente previsto na Proposta Comercial.
+                    </li>
+                    <li>
+                        <strong>Rescisão pela Spaceall:</strong> A Spaceall pode rescindir o contrato imediatamente,
+                        mediante notificação, se o Cliente:
+                        <ul class="legal-sublist">
+                            <li>Não cumprir o Artigo 4 (Preços e Pagamento).</li>
+                            <li>Violar substancialmente o Artigo 3 (Uso Adequado e Responsabilidade do Cliente).</li>
+                            <li>Se sujeitar a um processo de insolvência ou falência.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Consequências da Rescisão:</strong> Após a rescisão, o acesso do Cliente à Plataforma e
+                        à rede será desativado, e os seus dados serão eliminados num prazo de 90 dias, salvo retenção
+                        legal obrigatória.
+                    </li>
+                </ol>
+            </article>
+
+            <article id="contacto" class="uk-card uk-card-default uk-card-body legal-card">
+                <div class="clause-header">
+                    <span class="clause-badge">CLÁUSULA 08</span>
+                    <h2 class="uk-card-title">8. Lei Aplicável e Foro</h2>
+                </div>
+                <ol class="legal-list">
+                    <li>
+                        <strong>Jurisdição:</strong> Estes Termos são regidos e interpretados de acordo com as leis da
+                        República de Angola.
+                    </li>
+                    <li>
+                        <strong>Resolução de Litígios:</strong> Qualquer litígio emergente destes Termos será submetido
+                        à jurisdição exclusiva dos tribunais de Luanda, Angola, renunciando as partes a qualquer outro
+                        foro.
+                    </li>
+                </ol>
+            </article>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="cta-banner uk-padding-large uk-text-center uk-margin-large-top">
+            <span class="section-kicker">DÚVIDAS CONTRATUAIS OU COMERCIAIS?</span>
+            <h2 class="section-title uk-margin-small-top">Fale com a nossa equipa jurídica e comercial.</h2>
+            <p class="cta-text">
+                Para esclarecimentos sobre propostas, SLAs ou condições técnicas, contacte-nos através de
+                <a class="inline-green-anchor" href="mailto:contact@spaceall.net">contact&#64;spaceall.net</a>.
+            </p>
+            <div class="hero-actions uk-flex-center uk-margin-medium-top">
+                <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/contacto">
+                    Falar com a SPACEALL
+                    <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+                </a>
+                <a class="uk-button uk-border-pill uk-button-large botao-secundario" routerLink="/politicas">
+                    Ver Política de Privacidade
+                </a>
+            </div>
+        </div>
     </section>
-
-    <section id="servico">
-        <h2>2. Prestação e Âmbito do Serviço</h2>
-        <ol>
-            <li>Escopo: A Spaceall fornecerá acesso à sua rede de gateways e à Plataforma para a receção, processamento e visualização dos dados (payloads) enviados pelos dispositivos de IoT licenciados pelo Cliente.</li>
-            <li>Ativação: A ativação de novos dispositivos depende da conformidade do equipamento do Cliente com as especificações técnicas da rede Spaceall (ex: LoRaWAN standard) e do pagamento da taxa de ativação, quando aplicável.</li>
-            <li>Disponibilidade da Rede: A Spaceall empenha-se em manter a rede operacional e com a cobertura contratada, sujeita às limitações geográficas, condições atmosféricas e às definições no SLA.</li>
-        </ol>
-    </section>
-
-    <section id="obrigacoes-cliente">
-        <h2>3. Obrigações do Cliente</h2>
-        <ol>
-            <li>Uso Adequado: O Cliente compromete-se a utilizar o serviço exclusivamente para os fins M2M/IoT a que se destina, em conformidade com as leis aplicáveis em Angola.</li>
-            <li>Equipamento (Dispositivos):
-                <ul>
-                    <li>O Cliente é integralmente responsável pela aquisição, manutenção e configuração dos dispositivos IoT (ex: sensores LoRaWAN, dispositivos Milesight).</li>
-                    <li>O Cliente deve garantir que os seus dispositivos estão em conformidade com as normas de frequência e regulamentos angolanos e não interferem indevidamente com a rede Spaceall.</li>
-                </ul>
-            </li>
-            <li>Dados de Acesso: O Cliente é responsável por manter a confidencialidade das credenciais de acesso à Plataforma, sendo responsável por toda a atividade ocorrida na sua conta.</li>
-            <li>Indemnização: O Cliente concorda em indemnizar a Spaceall por quaisquer perdas ou danos resultantes do uso indevido do Serviço, incluindo, mas não se limitando, a ataques de negação de serviço ou sobrecarga intencional da rede.</li>
-        </ol>
-    </section>
-
-    <section id="cobranca">
-        <h2>4. Preços, Pagamento e Renovação</h2>
-        <ol>
-            <li>Subscrição (Modelo de Custo Previsível): O Cliente pagará uma subscrição mensal, trimestral ou anual baseada no número de dispositivos ativos e/ou no volume total de payloads contratados, conforme detalhado na Proposta Comercial.</li>
-            <li>Faturação: As faturas serão emitidas com a periodicidade acordada e o pagamento deve ser efetuado no prazo de [30/60] dias a contar da data de emissão.</li>
-            <li>Atraso no Pagamento (Incumprimento): O incumprimento dos prazos de pagamento confere à Spaceall o direito de:
-                <ul>
-                    <li>Aplicar juros de mora à taxa legal.</li>
-                    <li>Suspender imediatamente o acesso do Cliente à Plataforma e a conectividade dos seus dispositivos, notificando o Cliente com 48 horas de antecedência.</li>
-                </ul>
-            </li>
-            <li>Ajuste de Preço: A Spaceall reserva-se o direito de ajustar os preços mediante notificação prévia de 60 dias ao Cliente.</li>
-        </ol>
-    </section>
-
-    <section id="dados">
-        <h2>5. Propriedade Intelectual e Dados do Cliente</h2>
-        <ol>
-            <li>Propriedade da Plataforma: Todo o software, interfaces, API, códigos, algoritmos e infraestrutura de rede são e permanecerão propriedade exclusiva da Spaceall ou dos seus licenciadores. O Cliente recebe apenas uma licença limitada, não-exclusiva e revogável para usar a Plataforma durante a vigência do contrato.</li>
-            <li>Propriedade do Payload (Dados do Cliente):
-                <ul>
-                    <li>O Cliente é e permanecerá o único e exclusivo proprietário de todos os dados (payloads) gerados pelos seus dispositivos.</li>
-                    <li>A Spaceall atua apenas como processador desses dados, comprometendo-se a: (i) Tratar os dados de forma confidencial; (ii) Utilizar criptografia de ponta-a-ponta; (iii) Manter os dados armazenados e processados exclusivamente em Angola.</li>
-                </ul>
-            </li>
-        </ol>
-    </section>
-
-    <section id="responsabilidade">
-        <h2>6. Limitação de Responsabilidade (Cláusula Crítica)</h2>
-        <ol>
-            <li>Indisponibilidade: A Spaceall não será responsável por falhas de conectividade que resultem de:
-                <ul>
-                    <li>Interferência ou falha no equipamento do Cliente ou de terceiros.</li>
-                    <li>Eventos de Força Maior (incluindo desastres naturais, guerras, greves ou atos do governo).</li>
-                    <li>Manutenção de rede comunicada com antecedência, conforme o SLA.</li>
-                </ul>
-            </li>
-            <li>Exclusão de Danos: Em nenhuma circunstância a Spaceall ou os seus fornecedores (ex: Milesight) serão responsáveis por quaisquer danos indiretos, incidentais, especiais, punitivos ou consequenciais (incluindo, mas não se limitando a, perda de lucros, interrupção de negócios, perda de dados) resultantes do uso ou incapacidade de usar o Serviço, mesmo que a Spaceall tenha sido avisada da possibilidade de tais danos.</li>
-            <li>Limite Global: A responsabilidade total e máxima da Spaceall por qualquer causa relacionada ao Serviço será limitada ao montante total pago pelo Cliente nos seis (6) meses imediatamente anteriores ao evento que deu origem à reclamação.</li>
-        </ol>
-    </section>
-
-    <section id="rescisao">
-        <h2>7. Rescisão do Contrato</h2>
-        <ol>
-            <li>Rescisão pelo Cliente: O Cliente pode rescindir o contrato mediante notificação prévia de 30 dias. Não serão devidos reembolsos pela porção não utilizada da subscrição paga, exceto se especificamente previsto na Proposta Comercial.</li>
-            <li>Rescisão pela Spaceall: A Spaceall pode rescindir o contrato imediatamente, mediante notificação, se o Cliente:
-                <ul>
-                    <li>Não cumprir o Artigo 4 (Preços e Pagamento).</li>
-                    <li>Violar substancialmente o Artigo 3 (Uso Adequado e Responsabilidade do Cliente).</li>
-                    <li>Se sujeitar a um processo de insolvência ou falência.</li>
-                </ul>
-            </li>
-            <li>Consequências da Rescisão: Após a rescisão, o acesso do Cliente à Plataforma e à rede será desativado, e os seus dados serão eliminados num prazo de 90 dias, salvo retenção legal obrigatória.</li>
-        </ol>
-    </section>
-
-    <section id="contacto">
-        <h2>8. Lei Aplicável e Foro</h2>
-        <ol>
-            <li>Jurisdição: Estes Termos são regidos e interpretados de acordo com as leis da República de Angola.</li>
-            <li>Resolução de Litígios: Qualquer litígio emergente destes Termos será submetido à jurisdição exclusiva dos tribunais de Luanda, Angola, renunciando as partes a qualquer outro foro.</li>
-        </ol>
-    </section>
-
-</div>
+</main>
 
 <app-rodape></app-rodape>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" fill="none">
+  <defs>
+    <linearGradient id="case" x1="182" y1="97" x2="536" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30352E"/>
+      <stop offset=".52" stop-color="#151815"/>
+      <stop offset="1" stop-color="#080A08"/>
+    </linearGradient>
+    <linearGradient id="top" x1="225" y1="70" x2="477" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4B5148"/>
+      <stop offset=".55" stop-color="#242923"/>
+      <stop offset="1" stop-color="#171A16"/>
+    </linearGradient>
+    <linearGradient id="front" x1="228" y1="171" x2="510" y2="235" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20241F"/>
+      <stop offset="1" stop-color="#101310"/>
+    </linearGradient>
+    <filter id="shadow" x="94" y="42" width="532" height="268" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <ellipse cx="360" cy="253" fill="#76B91C" fill-opacity=".22" filter="url(#shadow)" rx="210" ry="34"/>
+  <path d="m181 108 235-59 178 48-236 63-177-52Z" fill="#76B91C" fill-opacity=".12"/>
+  <path d="m181 108 235-59 178 48-236 63-177-52Z" stroke="#A6E65A" stroke-opacity=".52" stroke-width="2"/>
+  <path d="m181 108 177 52v91l-177-55v-88Z" fill="url(#front)" stroke="#5D6559" stroke-width="2"/>
+  <path d="m358 160 236-63v91l-236 63v-91Z" fill="url(#case)" stroke="#5D6559" stroke-width="2"/>
+  <path d="m181 108 235-59 178 48-236 63-177-52Z" fill="url(#top)" stroke="#778071" stroke-width="2"/>
+  <path d="m219 109 194-49 121 32-195 51-120-34Z" stroke="#A6E65A" stroke-opacity=".25" stroke-width="2"/>
+  <path d="m237 108 178-44" stroke="#A6E65A" stroke-opacity=".2" stroke-width="3" stroke-linecap="round"/>
+  <path d="m240 121 57 17" stroke="#0A0D09" stroke-width="9" stroke-linecap="round"/>
+  <path d="m247 120 45 13" stroke="#52594F" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="326" cy="145" r="5" fill="#A6E65A"/>
+  <circle cx="326" cy="145" r="10" stroke="#A6E65A" stroke-opacity=".26" stroke-width="2"/>
+  <path d="m375 180 42-11v31l-42 11v-31Zm53-14 42-11v31l-42 11v-31Zm53-14 42-11v31l-42 11v-31Zm53-14 42-11v31l-42 11v-31Z" fill="#090B09" stroke="#778071" stroke-width="2"/>
+  <path d="m384 186 25-7v16l-25 7v-16Zm53-14 25-7v16l-25 7v-16Zm53-14 25-7v16l-25 7v-16Zm53-14 25-7v16l-25 7v-16Z" fill="#121612" stroke="#393F36" stroke-width="2"/>
+  <path d="m391 190 4-1m49-13 4-1m49-13 4-1m49-13 4-1" stroke="#A6E65A" stroke-linecap="round" stroke-width="3"/>
+  <path d="m201 210 136 42m182-54 56-15" stroke="#A6E65A" stroke-opacity=".32" stroke-width="2"/>
+  <path d="m225 226 3 1m20 5 3 1m20 5 3 1m20 5 3 1m20 5 3 1" stroke="#6C7468" stroke-linecap="round" stroke-width="4"/>
+  <path d="m375 238 204-54" stroke="#777F73" stroke-opacity=".45" stroke-width="2"/>
+  <text x="207" y="83" fill="#D8E8CE" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="3">SPACEALL EDGE</text>
+  <text x="399" y="270" fill="#A6E65A" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2">FANLESS · 2.5GbE</text>
+</svg>

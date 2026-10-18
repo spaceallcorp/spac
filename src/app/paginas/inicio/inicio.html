@@ -1,181 +1,369 @@
 <app-menu></app-menu>
 <app-hero></app-hero>
 
-<!-- H1 Principal -->
-<div class="uk-container uk-padding">
-    <h1 class="uk-text-center">SPACEALL | LoRaWAN, Wi-Fi, Internet e Cloud <br>para Empresas em Angola</h1>
+<main class="home-page">
 
-</div>
 
-<!-- Seção de Soluções -->
-<div class="uk-container uk-margin-medium-top">
-    <div class="uk-grid-small uk-child-width-1-3@m uk-text-center uk-grid-match" uk-grid>
+    <section id="solutions" class="uk-container uk-margin-large-top solutions-section">
         <div>
-            <div class="uk-card uk-card-default uk-card-body bg-gradient-dark">
-                <div class="uk-margin-medium-top">
-                                        <p style="color:#fff; font-weight:600;">Mais controle, menos custos, máxima eficiência.</p>
+            <div class="uk-text-center uk-margin-small-top uk-margin-medium-bottom">
+                <p class="texto-fundo">Serviços de Transporte L3 </p>
+                <h2 class="texto-4">Oferecemos várias formas de ligar sua infraesstrutura.</h2>
+            </div>
+            <div class="uk-grid-small uk-child-width-1-3@m uk-text-center uk-grid-match" uk-grid>
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body offer-card">
+                        <div class="home-image-frame">
+                            <img class="home-card-image" ngSrc="/img/connectivity-spaceall.jpg" fill priority
+                                alt="Rede privada a ligar vários locais numa cidade">
+                        </div>
+                        <span class="home-icon" uk-icon="icon: link; ratio: 1.3" aria-hidden="true"></span>
+                        <h3 class="texto-3">Redes Overlay Privadas (L3)</h3>
+                        <p class="offer-description">Ligue filiais e infraestruturas com total independência de
+                            operadora.
 
-                    <h2 class="texto-3">Agricultura, Transporte e Logística Inteligente</h2>
-                    <p style="color:#fff;">
-                        Economize com internet e créditos móveis. Nossa rede off-grid oferece conectividade segura,
-                        confiável e totalmente sob sua gestão.
-                    </p>
+                            Construa caminhos privados, seguros e resilientes unindo fibra, rede móvel ou satélite, sem
+                            o
+                            custo proibitivo nem a burocracia de circuitos dedicados tradicionais.</p>
+                        <a class="product-link offer-link" routerLink="/ligacoes-privadas">Saiba mais <span
+                                uk-icon="icon: arrow-right" aria-hidden="true"></span></a>
+                    </article>
+                </div>
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body offer-card">
+                        <div class="home-image-frame">
+                            <img class="home-card-image" ngSrc="/img/edge-network-illustration.svg" fill
+                                alt="Caixa Edge a ligar diferentes locais da rede à Internet">
+                        </div>
+                        <span class="home-icon" uk-icon="icon: server; ratio: 1.3" aria-hidden="true"></span>
+                        <h3 class="texto-3">Managed Exit Nodes &amp; redundância multi-ASN</h3>
+                        <p class="offer-description">Obtenha redundância Multi-Homing automática e controlo absoluto
+                            sobre
+                            as rotas de saída da sua internet, com IP Angolano Soberano e proteção Zero-Trust para
+                            equipas
+                            distribuídas.</p>
+                        <a class="product-link offer-link" routerLink="/nos-de-saida">Saiba mais <span
+                                uk-icon="icon: arrow-right" aria-hidden="true"></span></a>
+                    </article>
+                </div>
+                <div>
+                    <article class="uk-card uk-card-default uk-card-body offer-card">
+                        <div class="home-image-frame">
+                            <img class="home-card-image" ngSrc="/img/angolanvpn-illustration.svg" fill
+                                alt="Utilizador individual a ligar-se à Internet através de uma VPN segura">
+                        </div>
+                        <span class="home-icon" uk-icon="icon: lock; ratio: 1.3" aria-hidden="true"></span>
+                        <h3 class="texto-3">Acesso remoto ZTNA e soberania de dados</h3>
+                        <p class="offer-description">Dê a colaboradores remotos e executivos em viagem acesso seguro à
+                            rede
+                            da empresa. Clientes mobile e desktop oferecem IP angolano soberano e controlo de identidade
+                            Zero Trust.</p>
+                        <a class="product-link offer-link" href="https://angolanvpn.com">Saiba mais <span
+                                uk-icon="icon: arrow-right" aria-hidden="true"></span></a>
+                    </article>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body bg-gradient-dark">
-                <div class="uk-margin-medium-top">
-                    <p style="color:#fff; font-weight:600;">Informação precisa para decisões inteligentes.</p>
+    </section>
 
-                    <h2 class="texto-3">Gestão, Controlo e Rastreio em Tempo Real</h2>
-                    <p style="color:#fff;">
-                        Monitore operações em tempo real com soluções híbridas e open-source (ChirpStack/Tailscale),
-                        garantindo resiliência e decisões mais rápidas.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body bg-gradient-dark">
-                <div class="uk-margin-medium-top">
-                    <p style="color:#fff; font-weight:600;">Tecnologia sob medida para o seu negócio.</p>
-
-                    <h2 class="texto-3">Infraestrutura IoT e Cidades Inteligentes</h2>
-                    <p style="color:#fff;">
-                        Infraestrutura personalizada que integra seus processos, sensores e aplicações IoT, oferecendo
-                        cobertura confiável e escalável.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Seção Voz & Vídeo -->
-<div class="uk-margin-medium-top">
-    <div class="uk-text-center">
-        <p class="texto-fundo">Telecomunicação Off-Grid</p>
-    </div>
-    <div class="uk-container uk-margin-small-top">
-        <div class="uk-grid-large uk-child-width-expand@s uk-text-center uk-grid-match" uk-grid>
-            <div>
-                <img src="img/intercomm.png" alt="Soluções de Voz e Vídeo da SPACEALL Angola">
-            </div>
-            <div>
-                <div class="uk-card-body">
-                    <h3 class="titulo-2  uk-text-left "><b>Voz & Vídeo</b> sem terminais caros e contratos de internet
-                        dedicada</h3>
-                    <p class="uk-text-left">Integre comunicações simples (P.O.C) e dados de vigilância de baixa largura
-                        de banda diretamente na rede, eliminando a necessidade de terminais IP complexos e o OPEX de
-                        dados 3G/4G/5G.</p>
-                    <p class="uk-text-left uk-margin-medium-top">
-                        <a routerLink="/voz_video">
-                            <button class="uk-button uk-border-pill uk-button-large botao-verde">Saiba mais</button>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Seção Nuvem IoT -->
-<div>
-    <div class="uk-background-cover uk-panel uk-flex uk-flex-center uk-flex-middle"
-        style="background: linear-gradient(190deg, #000, #444);">
-        <div
-            class="uk-container uk-margin-medium-top uk-margin-medium-bottom uk-flex-center uk-text-center uk-flex-middle uk-padding">
-            <p class="texto-fundo">Nuvem IoT</p>
-            <p class="uk-text-center">
-                <img style="height:100%; width: 600px; margin-top:20px" src="img/cloud-iot.png"
-                    alt="Nuvem IoT e redes privadas LoRaWAN, HaLow e Bluetooth da SPACEALL">
-            </p>
-            <h3 class="texto-5">Hospede seus dispositivos, aplicações IoT e suas redes privadas LoRaWAN, HaLow e
-                Bluetooth na primeira nuvem nacional que elimina o risco de cobertura e transforma custos variáveis em
-                ROI previsível.</h3>
-            <p class="uk-text-center uk-margin-medium-top">
-                <a routerLink="/cloud">
-                    <button class="uk-button uk-border-pill uk-button-large botao-verde">Começar agora</button>
-                </a>
+    <section class="wide-feature" aria-labelledby="wide-feature-title">
+        <img class="wide-feature-image" ngSrc="/img/unsplash-server-room.jpg" fill
+            alt="Corredor de servidores com cabos e indicadores de rede" sizes="100vw">
+        <div class="wide-feature-shade"></div>
+        <div class="wide-feature-content uk-container">
+            <p class="texto-fundo">CONTINUIDADE DE NEGÓCIO</p>
+            <h2 id="wide-feature-title">Uma falha de ligação não deve parar a sua operação.</h2>
+            <p>Interligue filiais, equipas e aplicações através de caminhos privados que podem combinar diferentes
+                operadores e tecnologias de acesso.</p>
+            <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/contacto">
+                Planeie a sua rede <span class="uk-margin-small-left" uk-icon="icon: arrow-right"
+                    aria-hidden="true"></span>
+            </a>
+            <p class="photo-credit">
+                Fotografia: <a href="https://unsplash.com/license" target="_blank"
+                    rel="noopener noreferrer">Unsplash</a>
             </p>
         </div>
-    </div>
-</div>
+    </section>
 
-<!-- SLA -->
-<div class="uk-container uk-text-center uk-margin-large-top">
-    <div class="uk-text-center">
-        <p class="texto-fundo">SLA Garantido</p>
-    </div>
-    <div class="uk-padding">
-        <h2 style="font-family: inherit; font-weight: 600;" class="uk-h1">Zero Risco de Cobertura</h2>
-        <p>ROI Previsível e Controlo</p>
-    </div>
-</div>
+    <section class="ecosystem-section uk-section" aria-labelledby="angola-solution-title">
+        <div class="uk-container">
+            <div class="uk-text-center uk-margin-medium-bottom">
+                <p class="texto-fundo">VANTAGEM LOCAL &amp; SOBERANIA</p>
+                <h2 id="angola-solution-title" class="texto-4">Uma solução desenhada para operar em Angola</h2>
+                <p class="ecosystem-intro">
+                    Desenvolvemos nossa soluções para responder aos desafios concretos de conectividade no mercado
+                    angolano: manter os dados no país com baixa latência, eliminar a dependência de um único operador e
+                    integrar as ferramentas que a sua empresa já utiliza, com faturação 100% em Kwanzas.
+                </p>
+                <p class="texto-3">Compatível e pronta para integrar-se com a infraestrutura e internacional de forma
+                    nativa </p>
+            </div>
 
-<!-- NOC -->
-<div class="uk-container uk-text-center uk-margin-small-top uk-margin-large-bottom">
-    <div class="uk-card uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid-match" uk-grid>
-        <div class="uk-cover-container">
-            <img style="width: 100%; height: auto;" src="img/noc-spaceall.webp"
-                alt="NOC SPACEALL - Monitoramento de rede corporativa com zero pontos cegos">
+            <!-- Prova Técnica: Ecossistema e Compatibilidade em Angola -->
+            <div class="ecosystem-grid">
+                <article class="ecosystem-block">
+                    <h3 class="ecosystem-caption">INFRAESTRUTURA &amp; DATACENTERS EM ANGOLA</h3>
+                    <div class="ecosystem-marquee ecosystem-marquee-infrastructure">
+                        <div class="ecosystem-logo-track">
+                            <ul class="platform-logo-group ecosystem-logos" role="list">
+                                <li class="platform-logo">ANGONIX <span>Ponto de Troca de Tráfego (IXP)</span></li>
+                                <li class="platform-logo">ANGOLA IXP <span>Intercâmbio Nacional de Tráfego</span></li>
+                                <li class="platform-logo">Clouds2Africa <span>Nuvem Soberana em Angola</span></li>
+                                <li class="platform-logo">Angola Cables <span>Backbone &amp; Conectividade Global</span>
+                                </li>
+                                <li class="platform-logo">Raxio Data Centre <span>Luanda (Tier III)</span></li>
+                                <li class="platform-logo">Datacenter Sangano <span>Angola Cables</span></li>
+                                <li class="platform-logo">Paratus Data Center <span>Luanda</span></li>
+                                <li class="platform-logo">Cabos SACS &amp; WACS <span>Rotas Submarinas de Alta
+                                        Velocidade</span></li>
+                                <li class="platform-logo">2Africa &amp; MONET <span>Estações de Cabos
+                                        Internacionais</span></li>
+                                <li class="platform-logo">Rede Nacional <span>de Banda Larga Terrestre</span></li>
+                            </ul>
+                            <ul class="platform-logo-group ecosystem-logos" role="list" aria-hidden="true">
+                                <li class="platform-logo">ANGONIX <span>Ponto de Troca de Tráfego (IXP)</span></li>
+                                <li class="platform-logo">ANGOLA IXP <span>Intercâmbio Nacional de Tráfego</span></li>
+                                <li class="platform-logo">Clouds2Africa <span>Nuvem Soberana em Angola</span></li>
+                                <li class="platform-logo">Angola Cables <span>Backbone &amp; Conectividade Global</span>
+                                </li>
+                                <li class="platform-logo">Raxio Data Centre <span>Luanda (Tier III)</span></li>
+                                <li class="platform-logo">Datacenter Sangano <span>Angola Cables</span></li>
+                                <li class="platform-logo">Paratus Data Center <span>Luanda</span></li>
+                                <li class="platform-logo">Cabos SACS &amp; WACS <span>Rotas Submarinas de Alta
+                                        Velocidade</span></li>
+                                <li class="platform-logo">2Africa &amp; MONET <span>Estações de Cabos
+                                        Internacionais</span></li>
+                                <li class="platform-logo">Rede Nacional <span>de Banda Larga Terrestre</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ecosystem-block">
+                    <h3 class="ecosystem-caption">OPERADORAS &amp; CONECTIVIDADE COMPATÍVEL</h3>
+                    <div class="ecosystem-marquee ecosystem-marquee-carriers">
+                        <div class="ecosystem-logo-track">
+                            <ul class="platform-logo-group ecosystem-logos" role="list">
+                                <li class="platform-logo">UNITEL <span>Fibra Óptica, 4G e 5G</span></li>
+                                <li class="platform-logo">AFRICELL <span>Rede Móvel e FWA</span></li>
+                                <li class="platform-logo">PARATUS <span>Fibra Empresarial e Satélite</span></li>
+                                <li class="platform-logo">ZAP FIBRA <span>Internet Ultrarrápida (FTTH)</span></li>
+                                <li class="platform-logo">TV CABO <span>Banda Larga e Fibra</span></li>
+                                <li class="platform-logo">MS TELCOM <span>Circuitos e Dados Corporativos</span></li>
+                                <li class="platform-logo">ANGOLA TELECOM <span>Telecomunicações Nacionais</span></li>
+                                <li class="platform-logo">Starlink <span>Internet via Satélite (Baixa Latência)</span>
+                                </li>
+                                <li class="platform-logo">Eutelsat OneWeb <span>Satélite Corporativo LEO</span></li>
+                                <li class="platform-logo">Antenas VSAT <span>Conexões Remotas Banda C/Ku</span></li>
+                                <li class="platform-logo">MOVICEL &amp; STARTEL <span>Acessos Celulares e Rádio</span>
+                                </li>
+                                <li class="platform-logo ecosystem-more">Qualquer Provedor Local <span>Sem Fidelização a
+                                        Operadora</span></li>
+                            </ul>
+                            <ul class="platform-logo-group ecosystem-logos" role="list" aria-hidden="true">
+                                <li class="platform-logo">UNITEL <span>Fibra Óptica, 4G e 5G</span></li>
+                                <li class="platform-logo">AFRICELL <span>Rede Móvel e FWA</span></li>
+                                <li class="platform-logo">PARATUS <span>Fibra Empresarial e Satélite</span></li>
+                                <li class="platform-logo">ZAP FIBRA <span>Internet Ultrarrápida (FTTH)</span></li>
+                                <li class="platform-logo">TV CABO <span>Banda Larga e Fibra</span></li>
+                                <li class="platform-logo">MS TELCOM <span>Circuitos e Dados Corporativos</span></li>
+                                <li class="platform-logo">ANGOLA TELECOM <span>Telecomunicações Nacionais</span></li>
+                                <li class="platform-logo">Starlink <span>Internet via Satélite (Baixa Latência)</span>
+                                </li>
+                                <li class="platform-logo">Eutelsat OneWeb <span>Satélite Corporativo LEO</span></li>
+                                <li class="platform-logo">Antenas VSAT <span>Conexões Remotas Banda C/Ku</span></li>
+                                <li class="platform-logo">MOVICEL &amp; STARTEL <span>Acessos Celulares e Rádio</span>
+                                </li>
+                                <li class="platform-logo ecosystem-more">Qualquer Provedor Local <span>Sem Fidelização a
+                                        Operadora</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ecosystem-block">
+                    <h3 class="ecosystem-caption">SISTEMAS, BACKUP &amp; CLOUD ENTERPRISE</h3>
+                    <div class="ecosystem-marquee ecosystem-marquee-enterprise">
+                        <div class="ecosystem-logo-track">
+                            <ul class="platform-logo-group ecosystem-logos" role="list">
+                                <li class="platform-logo">Veeam <span>Backup &amp; Disaster Recovery</span></li>
+                                <li class="platform-logo">Acronis <span>Cyber Protect &amp; Backup Cloud</span></li>
+                                <li class="platform-logo">VMware vSphere <span>Servidores e Clusters ESXi</span></li>
+                                <li class="platform-logo">Proxmox VE <span>Virtualização e Backup Server</span></li>
+                                <li class="platform-logo">Microsoft Hyper-V <span>Ambientes Windows e Azure</span></li>
+                                <li class="platform-logo">Amazon S3 <span>Armazenamento de Objetos Compatível</span>
+                                </li>
+                                <li class="platform-logo">MinIO &amp; Ceph <span>Storage Soberano e Distribuído</span>
+                                </li>
+                                <li class="platform-logo">Commvault &amp; Veritas <span>Proteção de Dados
+                                        Empresariais</span></li>
+                                <li class="platform-logo">Servidores Linux <span>Ubuntu, Debian e RHEL</span></li>
+                                <li class="platform-logo">TrueNAS &amp; Synology <span>Storage e Replicação NAS</span>
+                                </li>
+                                <li class="platform-logo">Túneis WireGuard <span>Criptografia P2P de Ponta a
+                                        Ponta</span></li>
+                                <li class="platform-logo">Encaminhamento BGP <span>Redundância Automática de
+                                        Rotas</span></li>
+                            </ul>
+                            <ul class="platform-logo-group ecosystem-logos" role="list" aria-hidden="true">
+                                <li class="platform-logo">Veeam <span>Backup &amp; Disaster Recovery</span></li>
+                                <li class="platform-logo">Acronis <span>Cyber Protect &amp; Backup Cloud</span></li>
+                                <li class="platform-logo">VMware vSphere <span>Servidores e Clusters ESXi</span></li>
+                                <li class="platform-logo">Proxmox VE <span>Virtualização e Backup Server</span></li>
+                                <li class="platform-logo">Microsoft Hyper-V <span>Ambientes Windows e Azure</span></li>
+                                <li class="platform-logo">Amazon S3 <span>Armazenamento de Objetos Compatível</span>
+                                </li>
+                                <li class="platform-logo">MinIO &amp; Ceph <span>Storage Soberano e Distribuído</span>
+                                </li>
+                                <li class="platform-logo">Commvault &amp; Veritas <span>Proteção de Dados
+                                        Empresariais</span></li>
+                                <li class="platform-logo">Servidores Linux <span>Ubuntu, Debian e RHEL</span></li>
+                                <li class="platform-logo">TrueNAS &amp; Synology <span>Storage e Replicação NAS</span>
+                                </li>
+                                <li class="platform-logo">Túneis WireGuard <span>Criptografia P2P de Ponta a
+                                        Ponta</span></li>
+                                <li class="platform-logo">Encaminhamento BGP <span>Redundância Automática de
+                                        Rotas</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+
+
         </div>
-        <div>
-            <div class="uk-card-body uk-background-secondary uk-light">
-                <div class="uk-padding">
-                    <h3 class="texto-6 uk-text-left">NOC SPACEALL: 100% Visibilidade. Zero Pontos Cegos de Rede.</h3>
-                    <p class="uk-text-left">Mais do que apenas uma central de helpdesk, o Network Operations Center da
-                        SPACEALL é a nossa garantia de que a promessa "Zero Risco de Cobertura" é cumprida,
-                        traduzindo-se em ROI Previsível e Controlo Operacional Absoluto para o cliente executivo.</p>
-                    <p class="uk-text-left uk-margin-medium-top">
-                        <a routerLink="/contacto">
-                            <button class="uk-button uk-border-pill uk-button-medium botao-verde">Fale connosco</button>
-                        </a>
+    </section>
+
+    <section class="uk-container uk-section">
+        <div class="uk-text-center uk-margin-medium-bottom">
+            <p class="texto-fundo">MODELOS COMERCIAIS</p>
+            <h2 class="texto-4">Transparente e Sem Custos Ocultos</h2>
+        </div>
+        <div class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match" uk-grid>
+            <div>
+                <article class=" uk-card-body ">
+                    <span class="home-icon" uk-icon="icon: world; ratio: 1.2" aria-hidden="true"></span>
+                    <h3 class="texto-3">Conectividade por Nó ou Site <span>(Per-Node)</span></h3>
+                    <p>Subscrição B2B dimensionada pela escala da sua operação. Com uma taxa base mensal facturada em
+                        AOA. o valor
+                        final é ajustado ao âmbito técnico e volume da proposta comercial.</p>
+                </article>
+            </div>
+            <div>
+                <article class=" uk-card-body">
+                    <span class="home-icon" uk-icon="icon: lock; ratio: 1.2" aria-hidden="true"></span>
+                    <h3 class="texto-3">Mobilidade e Utilizadores Remotos <span>(Per-User)</span></h3>
+                    <p>Licenciamento mensal por utilizador para equipas distribuídas e executivos, garantindo acesso
+                        Zero-Trust (ZTNA) à rede privada e atribuição de IP Angolano Soberano em qualquer parte do
+                        mundo.</p>
+                </article>
+            </div>
+            <div>
+                <article class="uk-card uk-card-body audience-card commercial-card commercial-card-featured">
+                    <span class="commercial-card-label">DESTAQUE</span>
+                    <h3 class="texto-3">Hardware Edge <span>(Appliances)</span></h3>
+                    <img class="edge-box-image" ngSrc="/img/spaceall-edge-box.svg" width="720" height="320"
+                        alt="Appliance Edge industrial fanless com quatro portas RJ45 2.5GbE">
+                    <p>Equipamentos pré-configurados para filiais e datacenters, disponíveis nas modalidades de
+                        <strong>Aquisição (CapEx)</strong> ou <strong>Leasing/Aluguer (OpEx)</strong>, garantindo
+                        flexibilidade orçamental para a sua organização.
                     </p>
+                </article>
+            </div>
+        </div>
+        <p class="uk-text-center uk-margin-medium-top">
+            <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/contacto">
+                Fale com um Gestor <span class="uk-margin-small-left" uk-icon="icon: arrow-right"
+                    aria-hidden="true"></span>
+            </a>
+        </p>
+    </section>
+
+    <section class="uk-container uk-section uk-text-center" aria-labelledby="data-services-title">
+        <p class="texto-fundo">SERVIÇOS COMPLEMENTARES</p>
+        <h2 id="data-services-title" class="texto-4">Proteção, Soberania e Continuidade de Negócio</h2>
+        <p>Expanda o valor da sua rede overlay com soluções avançadas de Disaster Recovery, backups automatizados e
+            armazenamento soberano de baixa latência.</p>
+        <div class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-4@l uk-grid-match uk-margin-medium-top"
+            uk-grid>
+            <div>
+                <article class="uk-card uk-card-body audience-card">
+                    <span class="home-icon" uk-icon="icon: link; ratio: 1.3" aria-hidden="true"></span>
+                    <h3 class="texto-3">Túneis diretos para Disaster Recovery</h3>
+                    <p class="offer-kicker">Trânsito privado para motores de DR</p>
+                    <p>Conecte agentes de replicação como Veeam, Acronis ou Commvault diretamente à Cloud por um
+                        túnel L3 privado e otimizado. Reduza gargalos de largura de banda e evite expor tráfego crítico
+                        de recuperação à Internet pública.</p>
+                </article>
+            </div>
+            <div>
+                <article class="uk-card uk-card-body audience-card">
+                    <span class="home-icon" uk-icon="icon: copy; ratio: 1.3" aria-hidden="true"></span>
+                    <h3 class="texto-3">Backup local de filiais</h3>
+                    <p class="offer-kicker">Cópia e replicação entre infraestruturas</p>
+                    <p>Automatize cópias de segurança entre filiais, escritórios e datacenters através da malha overlay
+                        P2P da SPACEALL. Reforce a redundância geográfica dos dados sem os encaminhar por servidores de
+                        terceiros.</p>
+                </article>
+            </div>
+            <div>
+                <article class="uk-card uk-card-body audience-card">
+                    <span class="home-icon" uk-icon="icon: cloud-download; ratio: 1.3" aria-hidden="true"></span>
+                    <h3 class="texto-3">Backup para a nuvem soberana</h3>
+                    <p class="offer-kicker">Envio automatizado para qualquer Cloud</p>
+                    <p>Transfira ficheiros, máquinas virtuais e bases de dados da sua rede para a nuvem. O tráfego é
+                        encriptado de ponta a ponta e priorizado para proteger o desempenho da operação diária.</p>
+                </article>
+            </div>
+            <div>
+                <article class="uk-card uk-card-body audience-card">
+                    <span class="home-icon" uk-icon="icon: database; ratio: 1.3" aria-hidden="true"></span>
+                    <h3 class="texto-3">Armazenamento remoto soberano</h3>
+                    <p class="offer-kicker">Object Storage S3 e Block Storage</p>
+                    <p>Monte volumes de armazenamento remoto diretamente nos seus servidores e appliances. Com peering
+                        nos IXPs angolanos, aceda a dados alojados em Angola com baixa latência e ligação
+                        de nível local.</p>
+                </article>
+            </div>
+        </div>
+
+        <section class="platforms-strip uk-margin-large-top" aria-label="Plataformas compatíveis">
+            <p class="platforms-caption">
+                Compatível com as principais plataformas de Disaster Recovery e Armazenamento Enterprise
+            </p>
+            <div class="platforms-marquee">
+                <div class="platform-logo-track">
+                    <ul class="platform-logo-group" role="list">
+                        <li class="platform-logo">Veeam</li>
+                        <li class="platform-logo">Acronis</li>
+                        <li class="platform-logo">CloudBerry</li>
+                        <li class="platform-logo">CloudBy</li>
+                        <li class="platform-logo">CloudDefender</li>
+                        <li class="platform-logo">Commvault</li>
+                        <li class="platform-logo">Veritas <span>NetBackup</span></li>
+                        <li class="platform-logo">Amazon <span>S3 Compatible</span></li>
+                        <li class="platform-logo">Linux <span>KVM</span></li>
+                        <li class="platform-logo">Proxmox</li>
+                        <li class="platform-logo">MinIO</li>
+                    </ul>
+                    <ul class="platform-logo-group" role="list" aria-hidden="true">
+                        <li class="platform-logo">Veeam</li>
+                        <li class="platform-logo">Acronis</li>
+                        <li class="platform-logo">CloudBerry</li>
+                        <li class="platform-logo">CloudBy</li>
+                        <li class="platform-logo">CloudDefender</li>
+                        <li class="platform-logo">Commvault</li>
+                        <li class="platform-logo">Veritas <span>NetBackup</span></li>
+                        <li class="platform-logo">Amazon <span>S3 Compatible</span></li>
+                        <li class="platform-logo">Linux <span>KVM</span></li>
+                        <li class="platform-logo">Proxmox</li>
+                        <li class="platform-logo">MinIO</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- Parceiros -->
-<div style="border-radius: 20px; background: linear-gradient(90deg, #e0e0e0, #ebebeb);"
-    class="uk-margin-large-top uk-margin-large-bottom uk-container">
-    <div class="uk-text-center uk-margin-medium-top">
-        <p class="texto-fundo">Parceiros</p>
-    </div>
-    <div class="uk-child-width-1-2@s uk-grid-small uk-child-width-1-4@m uk-text-center" uk-grid>
-        <div>
-            <div class="uk-padding">
-                <p>Parceiro Tecnológico</p>
-                <img class="logos" src="img/mile-sight-spaceall.png" style="height: auto; width: auto;"
-                    alt="Parceiro Tecnológico MileSight">
-            </div>
-        </div>
-        <div>
-            <div class="uk-padding">
-                <p>Longo Alcance</p>
-                <img class="logos" src="img/lorawan-spaceall.png" style="height: auto; width: auto;"
-                    alt="Tecnologia LoRaWAN de Longo Alcance">
-            </div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-body">
-                <p>Largura de Banda</p>
-                <img class="logos" src="img/wifi-halow-spaceall.png" style="height: auto; width: auto;"
-                    alt="Wi-Fi HaLow de banda média">
-            </div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-body">
-                <p>Proximidade</p>
-                <img class="logos" src="img/lansitec-spaceall.png" style="height: auto; width: auto;"
-                    alt="Parceiro Lansitec de proximidade">
-            </div>
-        </div>
-    </div>
-</div>
+        </section>
+    </section>
+</main>
 
 <app-form></app-form>
 <app-rodape></app-rodape>

@@ -1,9 +1,22 @@
-<div>
-    <div class="uk-background-cover uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle"
-        style="background-image: url(/img/connectivity-spaceall.jpg);">
-        <div class="uk-container ">
-                    <h1 style="font-family: inherit ;"  class="titulo-1">Conectividade Inteligente e Sem Limites <br> para Negócios Em Angola</h1>
-
+<section class="hero-background uk-height-viewport uk-panel uk-flex uk-flex-center uk-flex-middle"
+    aria-label="SPACEALL Private Network">
+    <div class="uk-container uk-text-center hero-content">
+        <p class="hero-eyebrow"></p>
+        <div class="hero-copy-rotator" aria-live="polite" aria-atomic="true">
+            @for (message of messages; track message.title; let i = $index) {
+                <div class="hero-message"
+                    [class.is-current]="currentMessage() === i"
+                    [class.is-previous]="previousMessage() === i"
+                    [attr.aria-hidden]="currentMessage() !== i">
+                    <h1 class="hero-title">
+                        {{ message.prefix }}<span class="hero-keyword-pulse">{{ message.highlight }}</span>{{ message.suffix }}
+                    </h1>
+                    <p class="hero-description">{{ message.description }}</p>
+                </div>
+            }
         </div>
+        <a class="uk-button uk-border-pill uk-button-large botao-verde" routerLink="/desenhe-sua-ligacao">
+            Desenhe sua ligação <span class="uk-margin-small-left" uk-icon="icon: arrow-right" aria-hidden="true"></span>
+        </a>
     </div>
-</div>
+</section>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 import { Menu } from '../../layout/menu/menu';
 import { Rodape } from '../../layout/rodape/rodape';
@@ -10,7 +11,8 @@ import { Form } from '../../layout/form/form';
   imports: [
     Menu,
     Rodape,
-    Form
+    Form,
+    RouterLink
   ],
   templateUrl: './voz-video.html',
   styleUrl: './voz-video.css'
@@ -23,18 +25,18 @@ export class VozVideo {
   ) {
 
     /* ✅ TITLE (Google) */
-    this.title.setTitle('SPACEALL | Serviços de Voz & Vídeo para Empresa em Angola');
+    this.title.setTitle('SPACEALL | Comunicação empresarial por voz e vídeo');
 
     /* ✅ META DESCRIPTION */
     this.meta.addTag({
       name: 'description',
-      content: 'Serviços de Voz e Vídeo para empresas em Angola, com comunicação segura, escalável e integrada às suas infraestruturas corporativas e cloud.'
+      content: 'Explore soluções de voz e vídeo para equipas distribuídas, integradas com a conectividade e os sistemas da sua organização.'
     });
 
     /* ✅ KEYWORDS */
     this.meta.addTag({
       name: 'keywords',
-      content: 'Serviços de Voz, Serviços de Vídeo, VoIP Angola, Telecomunicações empresariais, videoconferência Angola, comunicações unificadas, telefonia IP, call center IP, comunicação corporativa, SPACEALL Angola'
+      content: 'comunicação empresarial, voz, vídeo, equipas distribuídas, intercomunicação, SPACEALL Angola'
     });
 
     /* ✅ ROBOTS */
@@ -52,12 +54,12 @@ export class VozVideo {
     /* ✅ OPEN GRAPH */
     this.meta.addTag({
       property: 'og:title',
-      content: 'SPACEALL | Serviços de Voz & Vídeo para Empresas em Angola'
+      content: 'SPACEALL | Comunicação empresarial por voz e vídeo'
     });
 
     this.meta.addTag({
       property: 'og:description',
-      content: 'Soluções de comunicação corporativa com Voz e Vídeo em alta qualidade, seguras e integradas à cloud para empresas em Angola.'
+      content: 'Planeie comunicações de voz e vídeo para equipas, centros de operação e locais ligados pela rede SPACEALL.'
     });
 
     this.meta.addTag({
@@ -83,12 +85,12 @@ export class VozVideo {
 
     this.meta.addTag({
       name: 'twitter:title',
-      content: 'SPACEALL | Serviços de Voz & Vídeo para Empresas em Angola'
+      content: 'SPACEALL | Comunicação empresarial por voz e vídeo'
     });
 
     this.meta.addTag({
       name: 'twitter:description',
-      content: 'Comunicação empresarial avançada com serviços de Voz & Vídeo integrados à sua infraestrutura.'
+      content: 'Comunicação para equipas distribuídas, integrada com a conectividade da sua organização.'
     });
 
     this.meta.addTag({

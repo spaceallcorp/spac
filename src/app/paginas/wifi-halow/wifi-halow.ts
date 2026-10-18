@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 import { Menu } from '../../layout/menu/menu';
 import { Rodape } from '../../layout/rodape/rodape';
@@ -10,7 +11,8 @@ import { Form } from '../../layout/form/form';
   imports: [
     Menu,
     Rodape,
-    Form
+    Form,
+    RouterLink
   ],
   templateUrl: './wifi-halow.html',
   styleUrl: './wifi-halow.css'
@@ -22,18 +24,18 @@ export class WifiHalow {
     private title: Title
   ) {
     /* ✅ TITLE (Google) */
-    this.title.setTitle('SPACEALL | Internet e WLAN de Banda Média para Empresas em Angola');
+    this.title.setTitle('SPACEALL | AngolanVPN para acesso remoto empresarial');
 
     /* ✅ META DESCRIPTION */
     this.meta.addTag({
       name: 'description',
-      content: 'WiFi HaLow para conectividade rural e corporativa de longo alcance. Ideal para backhaul, extensão de LAN, zonas remotas e integração Edge-to-Cloud com baixo custo e alta estabilidade.'
+      content: 'Aceda remotamente a recursos empresariais autorizados através do AngolanVPN e da rede SPACEALL.'
     });
 
     /* ✅ KEYWORDS */
     this.meta.addTag({
       name: 'keywords',
-      content: 'WiFi HaLow, Internet rural, conectividade de longo alcance, backhaul sem fio, Edge Computing, Internet para fazendas, conexão para zonas remotas, IoT rural, extensão de rede corporativa'
+      content: 'AngolanVPN, Business VPN, acesso remoto empresarial, Zero-Trust, Angola, SPACEALL'
     });
 
     /* ✅ ROBOTS */
@@ -51,12 +53,12 @@ export class WifiHalow {
     /* ✅ OPEN GRAPH — Facebook, WhatsApp, LinkedIn */
     this.meta.addTag({
       property: 'og:title',
-      content: 'SPACEALL | Internet e WLAN de Banda Média para Empresas em Angola'
+      content: 'SPACEALL | AngolanVPN para acesso remoto empresarial'
     });
 
     this.meta.addTag({
       property: 'og:description',
-      content: 'Solução de conectividade WiFi HaLow para zonas rurais e corporativas com grande alcance, estabilidade e baixo custo operacional.'
+      content: 'Acesso remoto empresarial através da rede SPACEALL com políticas de acesso alinhadas à organização.'
     });
 
     this.meta.addTag({
@@ -66,12 +68,12 @@ export class WifiHalow {
 
     this.meta.addTag({
       property: 'og:image',
-      content: 'https://spaceall.net/img/halow-banner.jpg'
+      content: 'https://spaceall.net/images/cover-spaceall.jpg'
     });
 
     this.meta.addTag({
       property: 'og:url',
-      content: 'https://spaceall.net/wifi-halow'
+      content: 'https://spaceall.net/angolanvpn'
     });
 
     /* ✅ TWITTER CARD */
@@ -82,17 +84,17 @@ export class WifiHalow {
 
     this.meta.addTag({
       name: 'twitter:title',
-      content: 'SPACEALL | Internet e WLAN de Banda Média para Empresas em Angola'
+      content: 'SPACEALL | AngolanVPN para acesso remoto empresarial'
     });
 
     this.meta.addTag({
       name: 'twitter:description',
-      content: 'Internet de médio alcance para zonas afastadas e ambientes industriais com tecnologia WiFi HaLow.'
+      content: 'AngolanVPN para acesso remoto seguro a recursos empresariais autorizados.'
     });
 
     this.meta.addTag({
       name: 'twitter:image',
-      content: 'https://spaceall.net/img/halow-banner.jpg'
+      content: 'https://spaceall.net/images/cover-spaceall.jpg'
     });
   }
 

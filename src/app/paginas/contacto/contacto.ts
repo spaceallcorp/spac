@@ -24,13 +24,13 @@ export class Contacto {
     /* ✅ META DESCRIPTION */
     this.meta.addTag({
       name: 'description',
-      content: 'Entre em contacto com a SPACEALL para suporte técnico, informações comerciais e assistência especializada em soluções de IoT, Internet e Cloud para empresas em Angola.'
+      content: 'Fale com a SPACEALL sobre rede privada empresarial, ENaaS, AngolanVPN, Multi-homing BGP e SPACEALL Edge Box em Angola.'
     });
 
     /* ✅ KEYWORDS */
     this.meta.addTag({
       name: 'keywords',
-      content: 'Contacto SPACEALL, Suporte técnico, Atendimento ao cliente, IoT Angola, Internet corporativa, Cloud corporativa, serviços empresariais'
+      content: 'Contacto SPACEALL, rede privada, ENaaS, AngolanVPN, Edge Box, conectividade empresarial, Angola'
     });
 
     /* ✅ ROBOTS */
@@ -53,7 +53,7 @@ export class Contacto {
 
     this.meta.addTag({
       property: 'og:description',
-      content: 'Suporte e contacto especializado da SPACEALL para empresas em Angola. Soluções IoT, Internet e Cloud corporativa.'
+      content: 'Fale com a SPACEALL sobre redes privadas, ENaaS, AngolanVPN e conectividade empresarial em Angola.'
     });
 
     this.meta.addTag({
@@ -84,7 +84,7 @@ export class Contacto {
 
     this.meta.addTag({
       name: 'twitter:description',
-      content: 'Entre em contacto com a SPACEALL para suporte técnico e informações sobre soluções de IoT, Internet e Cloud para empresas em Angola.'
+      content: 'Contacte a SPACEALL para avaliar a ligação entre filiais, utilizadores e cloud da sua organização.'
     });
 
     this.meta.addTag({

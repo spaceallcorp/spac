@@ -12,18 +12,20 @@
         <ul class="uk-navbar-nav uk-visible@m">
           
           <li class="uk-parent">
-            <a href="#">CONECTIVIDADE <span uk-navbar-parent-icon></span></a>
+            <a href="#">SOLUÇÕES <span uk-navbar-parent-icon></span></a>
             <div class="uk-navbar-dropdown">
               <ul class="uk-nav uk-navbar-dropdown-nav">
-                <li><a routerLink="/lorawan">LoRaWAN</a></li>
-                <li><a routerLink="/wifi_halow">WiFi HaLow</a></li>
+                <li><a routerLink="/ligacoes-privadas">Ligações Privadas</a></li>
+                <li><a routerLink="/nos-de-saida">Nós de Saída</a></li>
+                <li><a routerLink="/angolanvpn">AngolanVPN</a></li>
+                <li class="uk-nav-divider"></li>
+                <li><a routerLink="/desenhe-sua-ligacao" style="color: #a6e65a !important; font-weight: 600;">Configurador ENaaS</a></li>
               </ul>
             </div>
           </li>
-          
-          <li><a routerLink="/voz_video">VOZ & VÍDEO</a></li>
-          <li><a routerLink="/cloud">CLOUD</a></li>
-                    <li><a routerLink="/contacto">CONTACTO</a></li>
+          <li><a routerLink="/empresa">A EMPRESA</a></li>
+          <li><a routerLink="/desenhe-sua-ligacao" style="color: #c4ff77 !important; font-weight: 600;">DESENHE SUA LIGAÇÃO</a></li>
+          <li><a routerLink="/contacto">CONTACTO</a></li>
 
         </ul>
 
@@ -47,17 +49,20 @@
             </li>
             <li class="uk-nav-divider"></li>
             
+            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/">SPACEALL</a></li>
+            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/empresa">A EMPRESA</a></li>
             <li class="uk-parent">
-                <a href="#">CONECTIVIDADE</a>
+                <a href="#">SOLUÇÕES</a>
                 <ul class="uk-nav-sub">
-                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/lorawan">LoRaWAN</a></li>
-                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/wifi_halow">WiFi HaLow</a></li>
+                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/ligacoes-privadas">Ligações Privadas</a></li>
+                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/nos-de-saida">Nós de Saída</a></li>
+                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/angolanvpn">AngolanVPN</a></li>
+                    <li uk-toggle="target: #offcanvas-nav"><a routerLink="/desenhe-sua-ligacao" style="color: #a6e65a !important;">Configurador ENaaS</a></li>
                 </ul>
             </li>
 
-            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/voz_video">VOZ & VÍDEO</a></li>
-            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/cloud">CLOUD</a></li>
-                                <li><a routerLink="/contacto">CONTACTO</a></li>
+            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/desenhe-sua-ligacao" style="color: #c4ff77 !important; font-weight: 600;">DESENHE SUA LIGAÇÃO</a></li>
+            <li uk-toggle="target: #offcanvas-nav"><a routerLink="/contacto">CONTACTO</a></li>
 
 
         </ul>

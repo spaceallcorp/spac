@@ -20,4 +20,16 @@ describe('Form', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render the challenge options and update the form value on selection', () => {
+    const select: HTMLSelectElement = fixture.nativeElement.querySelector('#challenge');
+
+    expect(select.options.length).toBe(8);
+    expect(select.options[1].value).toBe('mesh_branches');
+
+    select.value = 'mesh_branches';
+    select.dispatchEvent(new Event('change'));
+
+    expect(component.contactForm.controls['challenge'].value).toBe('mesh_branches');
+  });
 });
